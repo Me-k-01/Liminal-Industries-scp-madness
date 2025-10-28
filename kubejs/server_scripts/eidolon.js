@@ -65,26 +65,17 @@ ServerEvents.recipes(event => {
   event.custom({
     "type": "eidolon:worktable",
     "pattern": [
-      "b c",
+      "   ",
       " a ",
-      "e f"
+      "   "
     ],
-    "reagents": "rrrr",
+    "reagents": " c f",
     "key": {
       "a": {
         "item": "minecraft:skeleton_skull"
       },
-      "b": {
-        "item": "minecraft:book"
-      },
       "c": {
         "item": "botania:lens_messenger"
-      },
-      "r": {
-        "item": "eidolon:soul_shard"
-      },
-      "e": {
-        "item": "eidolon:arcane_seal"
       },
       "f": {
         "item": "eidolon:parchment"
@@ -115,7 +106,7 @@ ServerEvents.recipes(event => {
         "item": "mekanism:teleportation_core"
       },
       "d": {
-        "item": "enderio:sentient_ender"
+        "item": "enderio:ender_resonator"
       },
       "e": {
         "item": "botania:rune_spring"
@@ -141,6 +132,15 @@ ServerEvents.recipes(event => {
 		A: 'eidolon:polished_planks',
 		B: 'kubejs:cut_carpet',
     C: 'eidolon:pewter_inlay'
+	})
+
+  event.shaped('minecraft:beehive', [
+		'AAA', 
+		'BBB',
+		'AAA'  
+		],{
+		A: '#minecraft:planks',
+		B: 'supplementaries:timber_frame'
 	})
 
   event.remove({output: 'eidolon:crucible'})
@@ -193,6 +193,15 @@ ServerEvents.recipes(event => {
 
   brazier_summoning(
     "eidolon:soul_shard", 
+		"minecraft:yellow_dye", 
+		"minecraft:black_dye",
+    "eidolon:soul_shard",
+
+    "minecraft:bee"	
+)
+
+  brazier_summoning(
+    "eidolon:soul_shard", 
 		"minecraft:bone", 
 		"minecraft:bone",
     "eidolon:soul_shard",
@@ -220,6 +229,15 @@ ServerEvents.recipes(event => {
 
   brazier_summoning(
     "eidolon:lesser_soul_gem", 
+		"minecraft:bone", 
+		"minecraft:bone_block",
+    "eidolon:lesser_soul_gem",
+
+    "eidolon:giant_skeleton"	
+)
+
+  brazier_summoning(
+    "eidolon:lesser_soul_gem", 
 		"minecraft:potato", 
 		"minecraft:beetroot",
     "eidolon:lesser_soul_gem",
@@ -243,6 +261,24 @@ ServerEvents.recipes(event => {
     "eidolon:lesser_soul_gem",
 
     "minecraft:ghast"	
+)
+
+  brazier_summoning(
+    "eidolon:lesser_soul_gem", 
+		"minecraft:stick", 
+		"minecraft:glowstone_dust",
+    "eidolon:lesser_soul_gem",
+
+    "minecraft:witch"	
+)
+
+  brazier_summoning(
+    "eidolon:soul_shard", 
+		"minecraft:rotten_flesh", 
+		"minecraft:rotten_flesh", 
+		"eidolon:soul_shard", 
+
+    "minecraft:zombie"	
 )
 
   brazier_summoning(
@@ -275,10 +311,19 @@ ServerEvents.recipes(event => {
   brazier_summoning(
     "kubejs:moderate_soul_gem", 
 		"minecraft:end_stone", 
-		"thermal:ender_pearl_dust",
+		"ae2:ender_dust",
     "kubejs:moderate_soul_gem",
 
     "minecraft:enderman"	
+)
+
+  brazier_summoning(
+    "kubejs:moderate_soul_gem", 
+		"minecraft:stone_sword", 
+		"minecraft:coal",
+    "kubejs:moderate_soul_gem",
+
+    "minecraft:wither_skeleton"	
 )
 
   brazier_summoning(
@@ -290,24 +335,23 @@ ServerEvents.recipes(event => {
     "minecraft:frog"	
 )
 
-brazier_summoning(
-    "kubejs:moderate_soul_gem", 
+  brazier_summoning(
+    "eidolon:soul_shard", 
+    "minecraft:white_wool", 
+    "minecraft:bone",
+    "eidolon:soul_shard",
+
+    "eidolon:wraith"	
+)
+
+  brazier_summoning(
+    "eidolon:lesser_soul_gem", 
     "botania:dragonstone", 
     "minecraft:end_stone",
-    "kubejs:moderate_soul_gem",
+    "eidolon:lesser_soul_gem",
 
     "minecraft:interaction"	
 )
-
-  event.remove({output: 'create:empty_blaze_burner'})
-  event.shaped('create:empty_blaze_burner', [
-    '   ', 
-    '   ',
-    'ABA'  
-    ],{
-    A: 'supplementaries:cage',
-    B: 'immersiveengineering:ingot_steel'
-  })
 
   event.remove({output: 'eidolon:shadow_gem_block'})
   event.shaped('eidolon:shadow_gem_block', [
@@ -468,11 +512,6 @@ event.custom({
         { "item": "eidolon:soul_shard" },
         { "item": "eidolon:death_essence" }
       ]
-    },
-    {
-      "items": [
-        { "item": "botania:dragonstone" }
-      ]
     }
   ],
   "result": {
@@ -504,6 +543,22 @@ event.custom({
   "result": {
     "item": "eidolon:magicians_wax",
     "count": 5
+  }
+})
+
+event.custom({
+  "type": "eidolon:crucible",
+  "steps": [
+    {
+      "items": [
+        { "item": "thermal:lead_ingot" },
+        { "item": "enderio:confusing_powder" }
+      ]
+    }
+  ],
+  "result": {
+    "item": "minecraft:gold_ingot",
+    "count": 1
   }
 })
 

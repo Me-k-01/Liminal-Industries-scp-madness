@@ -80,7 +80,7 @@ ServerEvents.recipes(event => {
 
 	event.remove({output: 'enderio:grains_of_infinity'})
 	event.recipes.thermal.centrifuge([
-		Item.of('enderio:confusing_powder').withChance(0.01)
+		Item.of('enderio:confusing_powder').withChance(0.10)
 	], 
 		'kubejs:carpet_dust')
 
@@ -115,7 +115,7 @@ ServerEvents.recipes(event => {
 			"chance": 0.25
 		  },
 		  {
-			"fluid": "thermal:creosote",
+			"fluid": "immersiveengineering:creosote",
 			"amount": 250
 		  }
 		],
@@ -149,27 +149,50 @@ ServerEvents.recipes(event => {
 		"type": "thermal:refinery",
 		"ingredient": {
 		  "fluid": "thermal:crude_oil",
-		  "amount": 100
+		  "amount": 500
 		},
 		"result": [
 		  {
 			"fluid": "thermal:heavy_oil",
-			"amount": 40
+			"amount": 20
 		  },
 		  {
 			"fluid": "thermal:light_oil",
-			"amount": 60
+			"amount": 30
 		  },
 		  {
 			"item": "thermal:bitumen"
 		  }
 		],
-		"energy": 6000
+		"energy": 1000
+	})
+
+		event.custom({
+		"type": "thermal:refinery",
+		"ingredient": {
+		  "fluid": "thermal:heavy_oil",
+		  "amount": 500
+		},
+		"result": [
+		  {
+			"fluid": "thermal:light_oil",
+			"amount": 250
+		  }
+		],
+		"energy": 1000
 	})
 
 	event.recipes.createFilling('immersiveengineering:fiberboard', [
 		'#minecraft:planks',
 		Fluid.of('immersiveengineering:phenolic_resin', 100)
 ])
+
+	event.remove({id: 'create:crushing/crimsite_recycling'})
+	event.remove({id: 'create:crushing/crimsite'})
+
+	event.recipes.createCrushing([
+ 		Item.of('create:crushed_raw_iron').withChance(0.4),
+	 	Item.of('immersiveengineering:raw_aluminum').withChance(0.02),
+	], 'create:crimsite')
 
 })

@@ -1,6 +1,6 @@
 ServerEvents.recipes(event => {
 
-		event.shapeless(Item.of('kubejs:data_chip1', "{display:{Lore:['{\"text\":\"Seed: 1000\",\"color\":\"aqua\",\"bold\":true,\"italic\":false}']}}"), ['kubejs:data_chip8'])
+		event.shapeless(Item.of('kubejs:data_chip1', "{display:{Lore:['{\"text\":\"Seed: 1000\",\"color\":\"aqua\",\"bold\":true,\"italic\":false}']}}"), ['kubejs:data_chip10'])
 		event.shapeless(Item.of('kubejs:data_chip2', "{display:{Lore:['{\"text\":\"Seed: 0100\",\"color\":\"aqua\",\"bold\":true,\"italic\":false}']}}"), ['kubejs:data_chip1']).id("backrooms:data_chip_2")
 		event.shapeless(Item.of('kubejs:data_chip3', "{display:{Lore:['{\"text\":\"Seed: 1100\",\"color\":\"aqua\",\"bold\":true,\"italic\":false}']}}"), ['kubejs:data_chip2'])
 		event.shapeless(Item.of('kubejs:data_chip4', "{display:{Lore:['{\"text\":\"Seed: 0010\",\"color\":\"aqua\",\"bold\":true,\"italic\":false}']}}"), ['kubejs:data_chip3'])
@@ -8,6 +8,9 @@ ServerEvents.recipes(event => {
 		event.shapeless(Item.of('kubejs:data_chip6', "{display:{Lore:['{\"text\":\"Seed: 0110\",\"color\":\"aqua\",\"bold\":true,\"italic\":false}']}}"), ['kubejs:data_chip5'])
 		event.shapeless(Item.of('kubejs:data_chip7', "{display:{Lore:['{\"text\":\"Seed: 1110\",\"color\":\"aqua\",\"bold\":true,\"italic\":false}']}}"), ['kubejs:data_chip6'])
 		event.shapeless(Item.of('kubejs:data_chip8', "{display:{Lore:['{\"text\":\"Seed: 0001\",\"color\":\"aqua\",\"bold\":true,\"italic\":false}']}}"), ['kubejs:data_chip7'])
+		event.shapeless(Item.of('kubejs:data_chip9', "{display:{Lore:['{\"text\":\"Seed: 1001\",\"color\":\"aqua\",\"bold\":true,\"italic\":false}']}}"), ['kubejs:data_chip8'])
+		event.shapeless(Item.of('kubejs:data_chip10', "{display:{Lore:['{\"text\":\"Seed: 0101\",\"color\":\"aqua\",\"bold\":true,\"italic\":false}']}}"), ['kubejs:data_chip9'])
+
 
 		event.recipes.create.splashing([Item.of('kubejs:data_chip_error', "{display:{Lore:['{\"text\":\"Data: 1000\",\"color\":\"red\",\"italic\":false,\"obfuscated\":true}']}}")],
 			'kubejs:data_chip1')
@@ -55,7 +58,7 @@ ServerEvents.recipes(event => {
 
 		event.shaped('kubejs:data_chip_infinity', [
 			'ABC', 
-			' DE',
+			'FDE',
 			'   '  
 			],{
 			A: 'kubejs:overclocked_clock', 
@@ -63,9 +66,9 @@ ServerEvents.recipes(event => {
 			C: 'ae2:singularity',
 			D: 'immersiveengineering:wirecoil_redstone', 
 			E: 'immersiveengineering:wirecutter', 
+			F: 'mekanism:ingot_refined_obsidian'
 		}).id("backrooms:data_chip_infinity")
 
 		event.replaceInput({output: 'botania:terra_plate'}, 'botania:manasteel_block', 'actuallyadditions:empowered_palis_crystal')
-		event.replaceInput({output: 'botania:mana_pearl'}, 'minecraft:ender_pearl', 'ae2:fluix_pearl')
 
 })

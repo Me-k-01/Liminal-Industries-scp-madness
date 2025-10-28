@@ -38,6 +38,10 @@ event
     .addLoot("minecraft:blaze_rod");
 
 event
+    .addBlockLootModifier("snad:snad")
+    .addLoot("snad:snad");
+
+event
     .addBlockLootModifier("kubejs:reality_controller_running")
     .replaceLoot("kubejs:reality_controller_running", "kubejs:reality_controller");
 

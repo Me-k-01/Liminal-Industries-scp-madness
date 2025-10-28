@@ -5,13 +5,14 @@ StartupEvents.registry('block', event => {
 
 //Wallpapers
 
-let wallpapers = (id) => {
-	event.create(id).displayName("Wallpaper")
-		.fullBlock(true)
-		.material("wood")
-		.soundType("cherry_wood")
-		.unbreakable()
+    let wallpapers = (id) => {
+        event.create(id).displayName("Wallpaper")
+            .fullBlock(true)
+            .material("wood")
+            .soundType("cherry_wood")
+            .unbreakable()
 	}
+
 
 	wallpapers("wallpaper1")
 	wallpapers("wallpaper2")
@@ -19,14 +20,24 @@ let wallpapers = (id) => {
 	wallpapers("wallpaper4")
 	wallpapers("wallpaper5")
 	wallpapers("wallpaper6")
+	wallpapers("wallpaper7")
 
 	event.create('wallpaper_soft').displayName('Wallpaper')
+		.model('kubejs:block/wallpaper')
+		.fullBlock(true)
+		.material("wood")
+		.soundType("cherry_wood")
+		.waterlogged() //Poolrooms ADDITION
+		.noDrops()
+		.noCollision()
+
+	event.create('wallpaper_fake').displayName('Fake Wallpaper')
 		.model('kubejs:block/wallpaper1')
 		.fullBlock(true)
 		.material("wood")
 		.soundType("cherry_wood")
+		.tagBlock('minecraft:mineable/axe')
 		.noDrops()
-		.noCollision()
 
 	event.create('wallpaper1_slab', 'slab').displayName('Wallpaper Slab')
 		.fullBlock(true)
@@ -34,18 +45,6 @@ let wallpapers = (id) => {
 		.soundType("cherry_wood")
 		.unbreakable()
 		.waterlogged()
-
-	event.create('pool_tiles').displayName('Pool Tiles')
-		.fullBlock(true)
-		.material("stone")
-		.soundType("deepslate")
-		.unbreakable()
-
-	event.create('long_pool_tiles').displayName('Pool Tiles')
-		.fullBlock(true)
-		.material("stone")
-		.soundType("deepslate")
-		.unbreakable()
 
 	event.create('wallpaper5_slab', 'slab').displayName('Hotel Wall Slab')
 		.fullBlock(true)
@@ -59,8 +58,94 @@ let wallpapers = (id) => {
 		.material("wood")
 		.soundType("cherry_wood")
 		.unbreakable()
+		.property(BlockProperties.AGE_3)
+		.randomTick(tick => {
+    const block = tick.block
+	const properties = block.properties
+	const age = Number(properties.age)
+	    if (age == 3) {
+      		block.set('kubejs:wallpaper1')
+		} else {
+        	block.set(block.getId(), {
+          	age: `${age+1}`
+        })
+	}})
 
+//Poolrooms
+	event.create('pool_tiles').displayName('Pool Tiles')
+		.fullBlock(true)
+		.material("stone")
+		.soundType("deepslate")
+		.unbreakable()
 
+	event.create('pool_tiles_soft').displayName('Pool Tiles')
+		.model('kubejs:block/pool_tiles')
+		.fullBlock(true)
+		.material("stone")
+		.soundType("deepslate")
+        .waterlogged()
+		.noDrops()
+		.noCollision()
+
+	event.create('pool_tiles_slab', 'slab').displayName('Pool Tiles Slab')
+		.material("stone")
+		.soundType("deepslate")
+		.unbreakable()
+		.waterlogged()
+
+	event.create('pool_tiles_stairs', 'stairs').displayName('Pool Tiles Stairs')
+		.material("stone")
+		.soundType("deepslate")
+		.unbreakable()
+		.waterlogged()
+
+	event.create('long_pool_tiles').displayName('Pool Tiles')
+		.fullBlock(true)
+		.material("stone")
+		.soundType("deepslate")
+		.unbreakable()
+		
+	event.create('long_pool_tiles_soft').displayName('Pool Tiles')
+		.model('kubejs:block/pool_tiles')
+		.fullBlock(true)
+		.material("stone")
+		.soundType("deepslate")
+        .waterlogged()
+		.noDrops()
+		.noCollision()
+
+	event.create('long_pool_tiles_slab', 'slab').displayName('Pool Tiles Slab')
+		.material("stone")
+		.soundType("deepslate")
+		.unbreakable()
+		.waterlogged()
+
+	event.create('long_pool_tiles_stairs', 'stairs').displayName('Pool Tiles Stairs')
+		.material("stone")
+		.soundType("deepslate")
+		.unbreakable()
+		.waterlogged()
+    
+    event.create('pool_locker_single').displayName('Pool Locker')
+        .soundType("metal")
+        .property(BlockProperties.FACING)
+        .property(BlockProperties.HALF)
+		.unbreakable()
+        .placementState(state => {
+            state.set(BlockProperties.FACING, state.horizontalDirection.opposite)
+            state.set(BlockProperties.HALF, 'bottom')
+        })
+		
+    event.create('pool_locker_double').displayName('Pool Locker')
+        .soundType("metal")
+        .property(BlockProperties.FACING)
+        .property(BlockProperties.HALF)
+		.unbreakable()
+        .placementState(state => {
+            state.set(BlockProperties.FACING, state.horizontalDirection.opposite)
+            state.set(BlockProperties.HALF, 'bottom')
+        })
+		
 //Ceiling
 	event.create('ceilling').displayName('Ceiling')
 		.fullBlock(true)
@@ -90,14 +175,14 @@ let wallpapers = (id) => {
 		.soundType("cherry_wood")
 		.unbreakable()
 
-	event.create('ceilling_slab', 'slab').displayName('Ceiling_Slab')
+	event.create('ceilling_slab', 'slab').displayName('Ceiling Slab')
 		.fullBlock(true)
 		.material("wood")
 		.soundType("cherry_wood")
 		.unbreakable()
 		.waterlogged()
 
-	event.create('ceilling_stairs', 'stairs').displayName('Ceiling_Stairs')
+	event.create('ceilling_stairs', 'stairs').displayName('Ceiling Stairs')
 		.fullBlock(true)
 		.material("wood")
 		.soundType("cherry_wood")
@@ -136,20 +221,23 @@ let wallpapers = (id) => {
 		.unbreakable()
 		.resistance(3600000.0)
 		.waterlogged()
+		.noDrops()
 
 	event.create('carpet_stairs', 'stairs').displayName('Carpet Stairs')
-		.fullBlock(true)
+		.fullBlock(false)
 		.material("wool")
 		.soundType("wool")
 		.unbreakable()
 		.resistance(3600000.0)
 		.waterlogged()
+		.noDrops()
 
 	event.create('carpet_soft').displayName('Carpet')
-		.textureAll('kubejs:block/carpet')
+		.model('kubejs:block/carpet')
 		.fullBlock(true)
 		.material("wool")
 		.soundType("wool")
+		.waterlogged() //Poolrooms ADDITION
 		.noDrops()
 		.noCollision()
 	
@@ -174,6 +262,7 @@ let wallpapers = (id) => {
 		.unbreakable()
 		.resistance(3600000.0)
 		.waterlogged()
+		.noDrops()
 
 	event.create('soggy_carpet').displayName('Soggy Carpet')
 		.fullBlock(true)
@@ -200,6 +289,24 @@ let wallpapers = (id) => {
 		.unbreakable()
 		.fullBlock(false)
 		.box(0, 0, 0, 16, 15, 16)
+		.property(BlockProperties.AGE_3)
+		.randomTick(tick => {
+    const block = tick.block
+	const properties = block.properties
+	const age = Number(properties.age)
+	    if (age == 3) {
+      		block.set('kubejs:carpet')
+		} else {
+        	block.set(block.getId(), {
+          	age: `${age+1}`
+        })
+	}})
+
+	event.create('floor_tiles_full').displayName('Floor Tiles')
+		.fullBlock(false)
+		.material("stone")
+		.soundType("stone")
+		.unbreakable()
 
 	event.create('carpet_grass').displayName('Carpet Grass')
 		.material("wool")
@@ -235,6 +342,7 @@ let wallpapers = (id) => {
 		.fullBlock(true)
 		.material("netherite_block")
 		.soundType("netherite_block")
+		.tagBlock('minecraft:mineable/pickaxe')
 		.property(BlockProperties.FACING)
 		.placementState(c =>{
 		c.set(BlockProperties.FACING, c.nearestLookingDirection.opposite)}
@@ -272,6 +380,7 @@ let wallpapers = (id) => {
 		.fullBlock(true)
 		.material("netherite_block")
 		.soundType("netherite_block")
+		.tagBlock('minecraft:mineable/pickaxe')
 		.property(BlockProperties.FACING)
 		.placementState(c =>{
 		c.set(BlockProperties.FACING, c.nearestLookingDirection.opposite)}
@@ -357,6 +466,9 @@ event.create("power_house").displayName("Power House")
 			.fullBlock(false)
 			.opaque(false)
 			.hardness(1.0)
+			.requiresTool(true)
+			.waterlogged() //Poolrooms ADDITION
+			.tagBlock('minecraft:mineable/pickaxe')
 			.item(item => 
 				item.modelJson({
 				  parent: 'minecraft:item/generated',
@@ -441,7 +553,7 @@ event.create("power_house").displayName("Power House")
 	event.create('sculk_tendrils').displayName('Sculk Tendrils')
 		.material("sculk")
 		.soundType("sculk_vein")
-		.unbreakable()
+		.waterlogged() //Poolrooms ADDITION
 		.renderType("cutout")
 		.fullBlock(false)
 		.noCollision()
@@ -464,6 +576,7 @@ event.create("power_house").displayName("Power House")
 	event.create('sculk_shroom').displayName('Sculk Shroom')
 		.material("sculk")
 		.soundType("sculk_vein")
+		.waterlogged() //Poolrooms ADDITION
 		.unbreakable()
 		.renderType("cutout")
 		.fullBlock(false)
@@ -475,6 +588,7 @@ event.create("power_house").displayName("Power House")
 	event.create('light_engineering_empty').displayName('Light Engineering Frame')
 		.material('lantern').hardness(1.5)
 		.soundType("lantern")
+		.tagBlock('minecraft:mineable/pickaxe')
 		.renderType("cutout")
 		.box(0, 0, 0, 3, 3, 16)
 		.box(13, 0, 0, 16, 3, 16)
@@ -488,10 +602,12 @@ event.create("power_house").displayName("Power House")
 		.box(3, 0, 0, 13, 3, 3)
 		.box(3, 0, 13, 13, 3, 16)
 		.box(3, 13, 13, 13, 16, 16)
+		.tagBlock('minecraft:mineable/pickaxe')
 
 	event.create('heavy_engineering_empty').displayName('Heavy Engineering Frame')
 		.material('lantern').hardness(1.5)
 		.soundType("lantern")
+		.tagBlock('minecraft:mineable/pickaxe')
 		.renderType("cutout")
 		.box(0, 0, 0, 3, 3, 16)
 		.box(13, 0, 0, 16, 3, 16)
@@ -508,6 +624,7 @@ event.create("power_house").displayName("Power House")
 		
 	event.create('half_frame_bottom').displayName('Bottom of a Machine Frame')
 		.material('lantern').hardness(1.5)
+		.tagBlock('minecraft:mineable/pickaxe')
 		.soundType("lantern")
 		.box(11, 5, 11, 16, 8, 16, true)
 		.box(0, 5, 11, 5, 8, 16, true)
@@ -520,6 +637,7 @@ event.create("power_house").displayName("Power House")
 
 	event.create('half_frame_top').displayName('Top of a Machine Frame')
 		.material('lantern').hardness(1.5)
+		.tagBlock('minecraft:mineable/pickaxe')
 		.soundType("lantern")
 		.box(11, 0, 0, 16, 5, 5, true)
 		.box(0, 0, 0, 5, 5, 5, true)
@@ -540,35 +658,127 @@ event.create("power_house").displayName("Power House")
 		.soundType("lantern")
 		.renderType("translucent")
 		.fullBlock(false)
+		.waterlogged() //Poolrooms ADDITION
+	    .hardness(0.0)
+    	.resistance(0.0)
 		.box(2, 0, 2, 14, 6, 14)
+
+	event.create('red_tape').displayName('Red Tape')
+		.material("wool")
+		.soundType("wool")
+		.renderType("translucent")
+		.fullBlock(false)
+		.box(0, 0, 0, 16, 1, 16)
+	    .hardness(0.0)
+    	.resistance(0.0)
+		.noCollision()
+		.item(item => 
+			item.modelJson({
+			  parent: 'minecraft:item/generated',
+			  textures: {
+				layer0: `kubejs:item/red_tape_roll`,
+			  },
+			})
+		)
+		.placementState(c =>{
+		  c.set(BlockProperties.FACING, c.nearestLookingDirection.opposite)}
+		)
+        .blockstateJson = {
+            "variants": {
+				"facing=up": {
+					"model": `kubejs:block/red_tape_north`,
+				},
+				"facing=down": {
+					"model": `kubejs:block/red_tape_north`,
+				},
+                "facing=north": {
+                    "model": `kubejs:block/red_tape_north`,
+                },
+                "facing=east": {
+                    "model": `kubejs:block/red_tape_east`,
+                },
+                "facing=south": {
+                    "model": `kubejs:block/red_tape_north`,
+                },
+				"facing=west": {
+                    "model": `kubejs:block/red_tape_east`,
+                },
+        }}
 
 
 //Tier4
+	event.create('wall_destroyer').displayName('Wall Piercer')
+		.fullBlock(true)
+		.material("stone")
+		.soundType("lantern")
+		.tagBlock('minecraft:mineable/pickaxe')
+			.property(BlockProperties.FACING)
+		.placementState(c =>{
+		c.set(BlockProperties.FACING, c.nearestLookingDirection.opposite)}
+			)
+		.blockstateJson = {
+			"variants": {
+				"facing=up": {
+					"model": `kubejs:block/wall_destroyer`,
+					"x": 180
+				},
+				"facing=down": {
+					"model": `kubejs:block/wall_destroyer`,
+					"x": 0
+				},
+				"facing=north": {
+					"model": `kubejs:block/wall_destroyer`,
+					"x": 90,
+					"y": 180
+				},
+				"facing=east": {
+					"model": `kubejs:block/wall_destroyer`,
+					"x": 90,
+					"y": 270
+				},
+				"facing=south": {
+					"model": `kubejs:block/wall_destroyer`,
+					"x": 90,
+					"y": 0
+				},
+				"facing=west": {
+					"model": `kubejs:block/wall_destroyer`,
+					"x": 90,
+					"y": 90
+				},
+			}
+		}
+
 	event.create('reality_frame').displayName('Reality Frame')
 		.fullBlock(true)
 		.material("stone")
 		.soundType("netherite_block")
+		.tagBlock('minecraft:mineable/pickaxe')
 
 	event.create('reality_charge').displayName('Reality Charge')
 		.fullBlock(true)
 		.material("stone")
 		.soundType("netherite_block")
 		.lightLevel(1.0)
+		.tagBlock('minecraft:mineable/pickaxe')
 
 	event.create('reality_charge_empty').displayName('Empty Reality Charge')
 		.fullBlock(true)
 		.material("stone")
 		.soundType("netherite_block")
+		.tagBlock('minecraft:mineable/pickaxe')
 
 	event.create('sculk_scrubber').displayName('Sculk Scrubber')
 		.fullBlock(true)
 		.material("stone")
 		.soundType("lantern")
+		.tagBlock('minecraft:mineable/pickaxe')
 	
 	event.create('sculked_sculk_scrubber').displayName('Sculked Sculk Scrubber')
 		.fullBlock(true)
 		.material("stone")
 		.soundType("lantern")
+		.tagBlock('minecraft:mineable/pickaxe')
 
 	event.create('lost_eye').displayName('Lost Eye')
 		.fullBlock(true)
@@ -592,6 +802,7 @@ StartupEvents.registry('item', event => {
 	event.create('incomplete_component_electronic_adv').displayName('Incomplete Advanced Electronic Component')
 	event.create('cut_carpet').displayName('Cut Carpet')
 	event.create('scrap').displayName('Scrap')
+	event.create('putty_knife').displayName('Putty Knife')
 	event.create('moderate_soul_gem').displayName('Moderate Soul Gem')
 	event.create('carpet_dust').displayName('Carpet Dust')
 	event.create('concrete_piece').displayName('Piece of Concrete')
@@ -612,6 +823,7 @@ StartupEvents.registry('item', event => {
 	event.create('overclocked_clock').displayName('Overclocked Clock')
 	event.create('ai').displayName('Artificial Intelligence')
 	event.create('quantum_string').displayName('Quantum String')
+	event.create('cobblestone_bucket').displayName('Bucket of Cobblestone')
 
 	event.create('reality_storage_empty').displayName('Empty Reality Storage Cell')
 	event.create('reality_storage_cell1').displayName('Reality Storage Cell')
@@ -624,6 +836,8 @@ StartupEvents.registry('item', event => {
 	event.create('data_chip6').displayName('Data Chip')
 	event.create('data_chip7').displayName('Data Chip')
 	event.create('data_chip8').displayName('Data Chip')
+	event.create('data_chip9').displayName('Data Chip')
+	event.create('data_chip10').displayName('Data Chip')
 	event.create('data_chip_infinity').displayName('Modified Data Chip')
 	event.create('data_chip_error').displayName('Broken Data Chip')
 
@@ -636,4 +850,9 @@ StartupEvents.registry('fluid', event => {
 		.flowingTexture('kubejs:block/liquid_time_flow')
 		.bucketColor(0xFFFFFF)
 		.noBlock() 
+
+  event.create('ball_pit')
+    .displayName('Ball Pit')
+    .stillTexture('kubejs:block/ball_pit_still')
+    .flowingTexture('kubejs:block/ball_pit_flow')
 })

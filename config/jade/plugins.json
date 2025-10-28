@@ -51,9 +51,6 @@
     "painting": true,
     "chiseled_bookshelf": true
   },
-  "jadeaddons": {
-    "equipment_requirement": ""
-  },
   "jadeaddons.create": {
     "filter": true,
     "backtank_capacity": true,
@@ -64,21 +61,8 @@
     "goggles.detailed": false,
     "placard": true
   },
-  "mekanism": {
-    "infuse_type": true,
-    "gas": true,
-    "remove_builtin": true,
-    "pigment": true,
-    "fluid": true,
-    "slurry": true,
-    "energy": true,
-    "tooltip_renderer": true
-  },
   "immersiveengineering": {
     "multiblock_icon": true
-  },
-  "supplementaries": {
-    "hat_stand": true
   },
   "jade": {
     "coordinates.rel": false,
@@ -88,11 +72,8 @@
     "registry_name": "OFF",
     "mod_name": true
   },
-  "camera": {
-    "image_frame": true
-  },
-  "corpse": {
-    "corpse": true
+  "balm": {
+    "jade": true
   },
   "ae2": {
     "part_icon": true,
@@ -105,6 +86,32 @@
     "power_storage": true,
     "crafting_monitor": true,
     "part_name": true
+  },
+  "jadeaddons": {
+    "equipment_requirement": ""
+  },
+  "exposure": {
+    "lightroom": true,
+    "photograph_frame": true
+  },
+  "mekanism": {
+    "infuse_type": true,
+    "gas": true,
+    "remove_builtin": true,
+    "pigment": true,
+    "fluid": true,
+    "slurry": true,
+    "energy": true,
+    "tooltip_renderer": true
+  },
+  "supplementaries": {
+    "hat_stand": true
+  },
+  "camera": {
+    "image_frame": true
+  },
+  "corpse": {
+    "corpse": true
   },
   "storagedrawers": {
     "display.stacklimit": true,

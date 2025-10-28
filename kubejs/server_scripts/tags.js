@@ -8,6 +8,7 @@ ServerEvents.tags('block', event => {
 	event.add('minecraft:mushroom_grow_block', 'kubejs:soggy_carpet')
 	event.remove('minecraft:moss_replaceable', 'kubejs:soggy_carpet')
 	event.remove('minecraft:logs', 'botania:livingwood_log')
+	event.remove('minecraft:soul_fire_base_blocks', 'tconstruct:soul_glass')
 
 	event.add('minecraft:sculk_replaceable', 'kubejs:ceilling')
 	event.add('minecraft:sculk_replaceable', 'kubejs:ceilling2')
@@ -74,7 +75,6 @@ ServerEvents.tags('block', event => {
 	event.add('kubejs:soft_sculk', 'kubejs:sculk_shroom')
 	event.add('kubejs:soft_sculk', 'kubejs:sculk_tendrils')
 
-
 	event.add('kubejs:ravager_blacklist', 'minecraft:air')
 
 	event.add('kubejs:ravager_blacklist', '#kubejs:backrooms_enviroment')
@@ -82,6 +82,8 @@ ServerEvents.tags('block', event => {
 	event.add('kubejs:ravager_blacklist', 'minecraft:barrier')
 	event.add('kubejs:ravager_blacklist', 'minecraft:bedrock')
 
+	event.add('minecraft:features_cannot_replace', '#kubejs:backrooms_enviroment')
+	event.add('mekanism:cardboard_blacklist', '#kubejs:backrooms_enviroment')
 
 	let ravager_blacklist = event.get("kubejs:ravager_blacklist").getObjectIds()
     let allBlocks  = []
@@ -96,6 +98,10 @@ ServerEvents.tags('block', event => {
 
 	event.add('create:fan_processing_catalysts/splashing', 'minecraft:wet_sponge')
 	event.remove('minecraft:moss_replaceable', 'kubejs:soggy_carpet')
+	event.add('minecraft:replaceable_by_trees', 'minecraft:light')
+	event.add('create:fan_transparent', 'minecraft:wet_sponge')
+
+	event.remove('minecraft:planks', 'immersiveengineering:fiberboard')
 
 	const mushrooms = event.get('botania:shimmering_mushrooms').getObjectIds()
   	mushrooms.forEach(mushrooms => {
@@ -106,29 +112,29 @@ ServerEvents.tags('block', event => {
 
 ServerEvents.tags('item', event => {
 
-	event.add('backrooms:chairs', /^.*chair.*/)
+	event.add('backrooms:chairs', /^refurbished_furniture:.+_chair$/)
 	event.add('backrooms:wooden_furniture', '#backrooms:chairs')
 
-	event.add('backrooms:tables', /^.*table.*/)
+	event.add('backrooms:tables', /^refurbished_furniture:.+_table$/)
 	event.add('backrooms:wooden_furniture', '#backrooms:tables')
 
-	event.add('backrooms:desks', /^.*desk.*/)
+	event.add('backrooms:desks', /^refurbished_furniture:.+_desk$/)
 	event.add('backrooms:wooden_furniture', '#backrooms:desks')
 
-	event.add('backrooms:drawers', /^.*drawer.*/)
+	event.add('backrooms:drawers', /^refurbished_furniture:.+_drawer$/)
 	event.remove('backrooms:drawers', '@storagedrawers')
 	event.add('backrooms:wooden_furniture', '#backrooms:drawers')
 	
-	event.add('backrooms:sinks', /^.*sink.*/)
+	event.add('backrooms:sinks', /^refurbished_furniture:.+_sink$/)
 	event.add('backrooms:wooden_furniture', '#backrooms:sinks')
 
-	event.add('backrooms:lamps', /^.*lamp.*/)
+	event.add('backrooms:lamps', /^refurbished_furniture:.+_lamp$/)
 	event.add('backrooms:wooden_furniture', '#backrooms:lamps')
 
-	event.add('backrooms:cabinetry', /^.*cabinetry.*/)
+	event.add('backrooms:cabinetry', /^refurbished_furniture:.+_cabinetry$/)
 	event.add('backrooms:wooden_furniture', '#backrooms:cabinetry')
 
-	event.add('backrooms:fans', /^.*fan.*/)
+	event.add('backrooms:fans', /^refurbished_furniture:.+_fan$/)
 	event.add('backrooms:wooden_furniture', '#backrooms:fans')
 
 	const furniture = event.get('backrooms:wooden_furniture').getObjectIds()
@@ -161,6 +167,10 @@ ServerEvents.tags('item', event => {
 
 	//event.remove('backrooms:bamboo_furniture', '@storagedrawers')
 
+	event.remove('minecraft:planks', 'immersiveengineering:fiberboard')
+
+	event.add('minecraft:logs_that_burn', 'minecraft:bamboo_block')
+	event.add('minecraft:logs_that_burn', 'minecraft:stripped_bamboo_block')
 
 	event.add('kubejs:ceilling_lamp', 'kubejs:ceilling_lamp')
 	event.add('kubejs:ceilling_lamp', 'kubejs:ceilling_lamp2')
@@ -173,8 +183,34 @@ ServerEvents.tags('item', event => {
 
 	event.add('kubejs:ender_gear', 'enderio:dark_bimetal_gear')
 	event.add('minecraft:completes_find_tree_tutorial', '#backrooms:wooden_furniture')
+	event.add('forge:slimeball/blood', 'minecraft:slime_ball')
 
+	event.add('thermal:crafting/casts', 'immersiveengineering:mold_plate')
+	event.add('thermal:crafting/dies', 'thermal:chiller_rod_cast')
+	event.add('thermal:crafting/dies', 'thermal:chiller_ingot_cast')
+	event.add('thermal:crafting/dies', 'thermal:chiller_ball_cast')
+	event.add('thermal:crafting/dies', 'ae2:silicon_press')
+	event.add('thermal:crafting/dies', 'ae2:calculation_processor_press')
+	event.add('thermal:crafting/dies', 'ae2:logic_processor_press')
+	event.add('thermal:crafting/dies', 'ae2:engineering_processor_press')
+
+	event.remove('minecraft:planks', 'eidolon:polished_planks')
 	event.remove('minecraft:planks', 'botania:livingwood_planks')
+	event.remove('minecraft:planks', 'botania:framed_livingwood')
+	event.remove('minecraft:planks', 'botania:pattern_framed_livingwood')
+	event.remove('minecraft:planks', 'botania:mossy_livingwood_planks')
+	event.remove('minecraft:planks', 'botania:dreamwood_planks')
+	event.remove('minecraft:planks', 'botania:framed_dreamwood')
+	event.remove('minecraft:planks', 'botania:pattern_framed_dreamwood')
+	event.remove('minecraft:planks', 'botania:mossy_dreamwood_planks')
+
+	event.remove('minecraft:soul_fire_base_blocks', 'tconstruct:soul_glass')
+	event.remove('tconstruct:melting/copper/tools_costing_1', 'minecraft:brush')
+	event.remove('tconstruct:melting/iron/tools_costing_1', 'minecraft:flint_and_steel')
+
+	//event.add('minecraft:axes', 'kubejs:putty_knife')
+	event.add('forge:tools/axes', '#minecraft:axes')
+	event.add('forge:tools/knives', 'tconstruct:dagger')
 
 	const mushrooms = event.get('botania:shimmering_mushrooms').getObjectIds()
   	mushrooms.forEach(mushrooms => {

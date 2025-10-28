@@ -1,4 +1,4 @@
-scoreboard players set max RNG_Constant 118
+scoreboard players set max RNG_Constant 142
 function backrooms:rng
 
 execute if score RNG RNG_Variable matches 1 run place template backrooms:bedrock1
@@ -11,7 +11,7 @@ execute if score RNG RNG_Variable matches 7 run place template backrooms:blue_cu
 execute if score RNG RNG_Variable matches 8 run place template backrooms:cannonballs
 execute if score RNG RNG_Variable matches 9 run place template backrooms:cardboard_castle
 execute if score RNG RNG_Variable matches 10 run place template backrooms:cardboard_house
-execute if score RNG RNG_Variable matches 11 run place template backrooms:carpet_drop
+execute if score RNG RNG_Variable matches 11 run place template backrooms:condoslime
 execute if score RNG RNG_Variable matches 12 run place template backrooms:ceilling_nest
 execute if score RNG RNG_Variable matches 13 run place template backrooms:chair_pillars
 execute if score RNG RNG_Variable matches 14 run place template backrooms:connected_cross
@@ -118,3 +118,28 @@ execute if score RNG RNG_Variable matches 114 run place template backrooms:husk_
 execute if score RNG RNG_Variable matches 115 run place template backrooms:husk_cross5
 execute if score RNG RNG_Variable matches 116 run place template backrooms:husk_cross6
 execute if score RNG RNG_Variable matches 117 run place template backrooms:stair_cross
+execute if score RNG RNG_Variable matches 118 run place template backrooms:escalate_1
+execute if score RNG RNG_Variable matches 119 run place template backrooms:escalate_2
+execute if score RNG RNG_Variable matches 120 run place template backrooms:pink_ravager
+
+#Community Rooms
+execute if score RNG RNG_Variable matches 121 run place template backrooms:flooded_hall_vinoren
+execute if score RNG RNG_Variable matches 122 run place template backrooms:polychromatizen1
+execute if score RNG RNG_Variable matches 123 run place template backrooms:zanodarceilingv1
+execute if score RNG RNG_Variable matches 124 run place template backrooms:wenbell_straftat_backrooms_02
+execute if score RNG RNG_Variable matches 125 run place template backrooms:wenbell_straftat_backrooms_01
+execute if score RNG RNG_Variable matches 126 run place template backrooms:thegroovysloth9
+execute if score RNG RNG_Variable matches 127 run place template backrooms:thegroovysloth3
+execute if score RNG RNG_Variable matches 128 run place template backrooms:thegroovysloth
+execute if score RNG RNG_Variable matches 129 run place template backrooms:office_sib315
+execute if score RNG RNG_Variable matches 130 run place template backrooms:n0tquitenull_sk8p4rk
+execute if score RNG RNG_Variable matches 131 run place template backrooms:mars_xoxoxo
+execute if score RNG RNG_Variable matches 132 run place template backrooms:ldanvil_corridor_ring
+execute if score RNG RNG_Variable matches 133 run place template backrooms:l1minalspace_musuem
+execute if score RNG RNG_Variable matches 134 run place template backrooms:l1minalspace_bookstore1.2
+execute if score RNG RNG_Variable matches 135 run place template backrooms:itsevelyn_ender_drain
+execute if score RNG RNG_Variable matches 136 run place template backrooms:itsevelyn_certus_meteor
+execute if score RNG RNG_Variable matches 137 run place template backrooms:blueduck_hotel_junction
+execute if score RNG RNG_Variable matches 138 run place template backrooms:gecco_testchamber00
+execute if score RNG RNG_Variable matches 139 run place template backrooms:cyansoup_suburb_intersection
+execute if score RNG RNG_Variable matches 140 run place template backrooms:cyansoup_ruinedsmeltery

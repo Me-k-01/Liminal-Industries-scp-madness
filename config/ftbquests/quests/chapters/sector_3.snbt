@@ -17,7 +17,7 @@
 				type: "item"
 			}]
 			x: 8.0d
-			y: 24.5d
+			y: 28.5d
 		}
 		{
 			dependencies: ["796F86181DD720D0"]
@@ -28,12 +28,17 @@
 				type: "item"
 			}]
 			x: 4.0d
-			y: 24.5d
+			y: 28.5d
 		}
 		{
 			dependencies: [
 				"78F13758BBD911A0"
 				"73CAD8D4E107FD6A"
+			]
+			description: [
+				"The Refinery can produce Phenolic Resin using the Ethanol from the Industrial Fermenter. "
+				""
+				"A silver plate is needed to catalyse the reaction. The plate will not be consumed."
 			]
 			icon: "immersiveengineering:refinery"
 			id: "7F91B09DB4328848"
@@ -83,12 +88,17 @@
 			]
 			title: "Refinery"
 			x: -4.0d
-			y: 4.0d
+			y: 8.0d
 		}
 		{
 			dependencies: [
 				"78F13758BBD911A0"
 				"5FD115F71D4F8E01"
+			]
+			description: [
+				"The Machine Frame can be made by making the bottom and the top half and attaching the segments together."
+				""
+				"This process can be done manually by hand, or it can be automated."
 			]
 			id: "246A2048B0070B20"
 			rewards: [{
@@ -111,11 +121,16 @@
 			]
 			title: "Making a Machine Frame"
 			x: 0.0d
-			y: 16.0d
+			y: 20.0d
 		}
 		{
 			dependencies: ["246A2048B0070B20"]
 			id: "18FCA774852345F8"
+			rewards: [{
+				id: "362FA478E39125BB"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			tasks: [{
 				id: "4455C5CDD263A976"
@@ -123,11 +138,24 @@
 				type: "item"
 			}]
 			x: 8.0d
-			y: 20.0d
+			y: 24.0d
 		}
 		{
 			dependencies: ["246A2048B0070B20"]
+			description: [
+				"The Induction Smelter can be used to create a lot of advanced items."
+				""
+				"It is especially useful for the automatic creation of Fluorecent Lights and Vacuum Tubes. "
+				""
+				"These two items are both needed for Electronic Components and "
+				"Advanced Electronic Components."
+			]
 			id: "796F86181DD720D0"
+			rewards: [{
+				id: "3B70A9C3C17B9A70"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			tasks: [{
 				id: "5F2057FCC8BA543A"
@@ -135,7 +163,7 @@
 				type: "item"
 			}]
 			x: 4.0d
-			y: 20.0d
+			y: 24.0d
 		}
 		{
 			dependencies: ["64C1F773CA05847E"]
@@ -172,24 +200,30 @@
 			]
 			title: "Renewable Copper"
 			x: -1.0d
-			y: 6.5d
+			y: 10.5d
 		}
 		{
 			dependencies: [
 				"7F91B09DB4328848"
 				"6DB9FC4B11904EE5"
 			]
+			description: ["Fiberboard can be made using the Refinery and the Fermenter. It is the base component for brass casings."]
 			id: "12CC2DCC3B227D34"
+			subtitle: "Stronger Wood"
 			tasks: [{
 				id: "683532B4F11E3AEE"
 				item: "immersiveengineering:fiberboard"
 				type: "item"
 			}]
 			x: -4.0d
-			y: 7.0d
+			y: 11.0d
 		}
 		{
 			dependencies: ["4969351B16EAD7FF"]
+			description: [
+				"The Atomic Reconstructor can reform materials on the atomic level to form special crystals."
+				"Void Crystals will be needed first. They can be made from Black Quartz."
+			]
 			id: "5FD115F71D4F8E01"
 			rewards: [{
 				id: "483C8A8F0B790AF2"
@@ -203,28 +237,12 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 12.5d
+			y: 17.0d
 		}
 		{
+			dependencies: ["78F13758BBD911A0"]
 			id: "73CAD8D4E107FD6A"
-			rewards: [
-				{
-					id: "75663A7D8ECF84CB"
-					item: "kubejs:party_popper"
-					type: "item"
-				}
-				{
-					id: "29667C48B112E501"
-					item: "berry_good:music_disc_fox"
-					type: "item"
-				}
-				{
-					id: "596F5E488C943F1A"
-					item: "supplementaries:confetti_popper"
-					type: "item"
-				}
-			]
-			size: 2.0d
+			size: 3.0d
 			tasks: [{
 				id: "7338F79D61FFF9E2"
 				item: "immersiveengineering:heavy_engineering"
@@ -237,6 +255,11 @@
 			dependencies: ["4969351B16EAD7FF"]
 			icon: "create:track"
 			id: "6D5B52045E758240"
+			rewards: [{
+				id: "6F2FDC2665769FE4"
+				item: "create:track_station"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "3E2A2E60619CD342"
@@ -256,11 +279,14 @@
 				}
 			]
 			title: "Liminal Transport"
-			x: -4.0d
-			y: 11.0d
+			x: 4.0d
+			y: 15.5d
 		}
 		{
-			dependencies: ["1BB79E9A49046DE9"]
+			dependencies: [
+				"1BB79E9A49046DE9"
+				"45A3201920266E62"
+			]
 			id: "7D9AAE5AF42E626B"
 			tasks: [{
 				id: "2F7CE8923AB85116"
@@ -268,13 +294,14 @@
 				type: "item"
 			}]
 			x: 4.0d
-			y: 7.0d
+			y: 11.0d
 		}
 		{
 			dependencies: [
 				"7D9AAE5AF42E626B"
 				"12CC2DCC3B227D34"
 			]
+			description: ["Using Brass Casings you can now make all the brass components for create and start your own liminal transport network."]
 			icon: "create:railway_casing"
 			id: "4969351B16EAD7FF"
 			tasks: [
@@ -296,12 +323,17 @@
 			]
 			title: "Brass Age"
 			x: 0.0d
-			y: 9.5d
+			y: 14.0d
 		}
 		{
 			dependencies: ["73CAD8D4E107FD6A"]
 			description: ["With Heavy Engineering Blocks you can now summon blazes using the brazier."]
 			id: "1BB79E9A49046DE9"
+			rewards: [{
+				id: "75F053B1E7142634"
+				item: "plushie_buddies:plushie_blaze"
+				type: "item"
+			}]
 			shape: "gear"
 			subtitle: "Sentient Fireplace"
 			tasks: [
@@ -317,7 +349,7 @@
 				}
 			]
 			x: 4.0d
-			y: 4.0d
+			y: 8.0d
 		}
 		{
 			dependencies: [
@@ -328,9 +360,8 @@
 			]
 			id: "572AD4DE946B6915"
 			rewards: [{
-				count: 2
-				id: "17F7755646031A7E"
-				item: "farmersdelight:melon_popsicle"
+				id: "68CB0D6634F7DABB"
+				item: "kubejs:party_popper"
 				type: "item"
 			}]
 			size: 2.0d
@@ -340,11 +371,16 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 28.0d
+			y: 32.0d
 		}
 		{
 			dependencies: ["572AD4DE946B6915"]
 			id: "63DEC531E6BDC084"
+			rewards: [{
+				id: "22034A1F8E4D3B41"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			tasks: [{
 				id: "4F415897434A12F8"
@@ -352,7 +388,7 @@
 				type: "item"
 			}]
 			x: -8.5d
-			y: 32.0d
+			y: 36.0d
 		}
 		{
 			dependencies: ["63DEC531E6BDC084"]
@@ -364,11 +400,16 @@
 			}]
 			title: "A Tree Under Fluorescent Tubes "
 			x: -8.5d
-			y: 36.0d
+			y: 40.0d
 		}
 		{
 			dependencies: ["572AD4DE946B6915"]
 			id: "2514C72B5F5115B8"
+			rewards: [{
+				id: "583F84D73971A9CC"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			tasks: [{
 				id: "541BD91F61DFA3BF"
@@ -377,9 +418,10 @@
 			}]
 			title: "Centrifugal Separator"
 			x: -4.0d
-			y: 32.0d
+			y: 36.0d
 		}
 		{
+			description: ["There are meteors of Sky Stone scattered throughout the backrooms. At the core of them, you should be able to find a mysterious cube containing all four presses."]
 			id: "5E7D73247DA737FF"
 			shape: "square"
 			tasks: [
@@ -406,11 +448,16 @@
 			]
 			title: "Searching for Ancient Tech"
 			x: -2.0d
-			y: 36.0d
+			y: 40.0d
 		}
 		{
 			dependencies: ["572AD4DE946B6915"]
 			id: "1C6DE105C85C708E"
+			rewards: [{
+				id: "69D03A1E1480EFF0"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			tasks: [{
 				id: "47484DF07E9AE61D"
@@ -418,7 +465,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 32.0d
+			y: 36.0d
 		}
 		{
 			dependencies: ["760F4441BDBA7F53"]
@@ -491,8 +538,9 @@
 					type: "item"
 				}
 			]
+			title: "Arc Furnace"
 			x: 4.0d
-			y: 40.0d
+			y: 44.0d
 		}
 		{
 			dependencies: [
@@ -509,6 +557,28 @@
 			]
 			icon: "kubejs:reality_controller_running"
 			id: "6425A4B344A3E70F"
+			rewards: [
+				{
+					count: 3
+					id: "0C2A27AAA21DDDC1"
+					item: "kubejs:party_popper"
+					type: "item"
+				}
+				{
+					id: "5DBE9819BDA91586"
+					item: "minecraft:music_disc_strad"
+					type: "item"
+				}
+				{
+					id: "070ADB59E45BE894"
+					item: {
+						Count: 1
+						id: "plushie_buddies:plushie_enderman"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
 			shape: "gear"
 			size: 3.0d
 			subtitle: "Abducting the Overworld"
@@ -537,7 +607,7 @@
 			]
 			title: "Abducting Dimensions"
 			x: 0.0d
-			y: 46.0d
+			y: 50.0d
 		}
 		{
 			dependencies: [
@@ -558,7 +628,7 @@
 			}]
 			title: "Arc Furnace Prep"
 			x: 4.0d
-			y: 36.0d
+			y: 40.0d
 		}
 		{
 			dependencies: [
@@ -572,7 +642,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 36.0d
+			y: 40.0d
 		}
 		{
 			dependencies: ["6F3B77AB45A5D8CF"]
@@ -598,11 +668,16 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 40.0d
+			y: 44.0d
 		}
 		{
 			dependencies: ["572AD4DE946B6915"]
 			id: "4075EE5CDFF9DAFA"
+			rewards: [{
+				id: "08EDF55C825EEE0E"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			tasks: [{
 				id: "571487D0A3489C6E"
@@ -637,11 +712,21 @@
 				type: "item"
 			}]
 			x: 4.0d
-			y: 32.0d
+			y: 36.0d
 		}
 		{
 			dependencies: ["2514C72B5F5115B8"]
+			description: [
+				"The Reality Charge acts as the power source of the Reality Frame. "
+				""
+				"After the Frame is done generating, the Reality Charge will need to be empowered again, so it is a very good idea to set up a Confusing Powder farm."
+			]
 			id: "37FD897CA97FD28D"
+			rewards: [{
+				id: "7104DE394EEDCCE4"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "07A18CB85EEBDCA2"
@@ -655,19 +740,24 @@
 				}
 			]
 			x: -4.0d
-			y: 40.0d
+			y: 44.0d
 		}
 		{
 			dependencies: ["572AD4DE946B6915"]
 			id: "36FA0B2177D6D17C"
+			rewards: [{
+				id: "26D939D2CADFD382"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			tasks: [{
 				id: "088E3F28A15B75D8"
-				item: "thermal:machine_crucible"
+				item: "thermal:machine_bottler"
 				type: "item"
 			}]
 			x: 8.0d
-			y: 32.0d
+			y: 36.0d
 		}
 		{
 			dependencies: ["1BB79E9A49046DE9"]
@@ -681,6 +771,11 @@
 				"&oFor what could equal the value of a human soul?"
 			]
 			id: "64C1F773CA05847E"
+			rewards: [{
+				id: "2AF12D20B6E9DB01"
+				item: "kubejs:party_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			size: 2.0d
 			subtitle: "Equivalent Exchange"
@@ -690,7 +785,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 4.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["5BA5847E7ACD473A"]
@@ -708,7 +803,7 @@
 			}]
 			title: "Reliable Steel"
 			x: 6.0d
-			y: 40.0d
+			y: 44.0d
 		}
 		{
 			dependencies: [
@@ -716,7 +811,7 @@
 				"7DB91F364892F863"
 			]
 			description: [
-				"Oil can be tapped out of Crude Oil Soaked Carpet endlessly by right-clicking it with a drill."
+				"Oil can be tapped out of Crude Oil Soaked Carpet endlessly by right-clicking it with a sponge."
 				"Uppon right-clicking Crude Oil will erupt from the carpet, ready to be picked up."
 				""
 				"It is recommended that you automate this process."
@@ -735,38 +830,38 @@
 			subtitle: "Black Gold"
 			tasks: [
 				{
-					id: "1BD5B43CA8E86806"
+					id: "771A90A2218D4A0A"
+					item: "minecraft:sponge"
+					type: "item"
+				}
+				{
+					id: "38006D03C271FDD8"
 					item: "thermal:crude_oil_bucket"
 					optional_task: true
 					type: "item"
 				}
 				{
-					id: "6386E2DDD54C3811"
+					id: "2395FB904349D0C4"
 					item: "thermal:tar"
 					type: "item"
 				}
 			]
 			title: "Carpet Oil"
 			x: -4.0d
-			y: 24.5d
+			y: 28.5d
 		}
 		{
 			dependencies: ["246A2048B0070B20"]
+			description: ["The Empowerer needs to be surrounded by four Display Stands in all cardinal directions. When powered by the right amount of energy, they can empower all kinds of crystals that you will need for the late-game."]
 			id: "7BC25405C23D7BDF"
-			rewards: [
-				{
-					id: "30A070C3FE269357"
-					item: "kubejs:party_popper"
-					type: "item"
-				}
-				{
-					id: "646F89AC07D14E8D"
-					item: "supplementaries:confetti_popper"
-					type: "item"
-				}
-			]
+			rewards: [{
+				id: "30A070C3FE269357"
+				item: "kubejs:party_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			size: 2.0d
+			subtitle: "Even Stronger Crystals"
 			tasks: [
 				{
 					id: "2D43D4DB34E60CB0"
@@ -781,22 +876,39 @@
 				}
 			]
 			x: 0.0d
-			y: 22.0d
+			y: 26.0d
 		}
 		{
+			description: ["A small amount of terrasteel is needed to make the Reality Frame. So it is time to catch up on Botania."]
 			id: "2DB91AF3467FDD67"
+			rewards: [{
+				id: "230E39F74096FB19"
+				item: "kubejs:party_popper"
+				type: "item"
+			}]
 			shape: "gear"
+			size: 2.0d
 			tasks: [{
 				id: "08FB63673650683C"
 				item: "botania:terra_plate"
 				type: "item"
 			}]
 			x: -8.5d
-			y: 40.0d
+			y: 44.0d
 		}
 		{
 			dependencies: ["246A2048B0070B20"]
+			description: [
+				"The Fractionating Still can turn Crude Oil into Bitumen leading to the creation of Tar when using this machine in combination with the Pyroliser."
+				""
+				"Additionally, the Fractionating Still can also be used to make Refined Fuel. This can be turned into a good amount of power or heat for the Steam Engine."
+			]
 			id: "6762380EB7B4FB9A"
+			rewards: [{
+				id: "0F3FD25F8CEB2DC5"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			tasks: [{
 				id: "1D2EC5F6CB2C5D41"
@@ -804,11 +916,21 @@
 				type: "item"
 			}]
 			x: -4.0d
-			y: 20.0d
+			y: 24.0d
 		}
 		{
 			dependencies: ["246A2048B0070B20"]
+			description: [
+				"The Pyrolizer can be used to turn Bitumen into Tar."
+				""
+				"Tar will be needed to empower the Void Crystals."
+			]
 			id: "7DB91F364892F863"
+			rewards: [{
+				id: "2399EA647B97BDF0"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			tasks: [{
 				id: "4CEDF492E888799C"
@@ -816,7 +938,7 @@
 				type: "item"
 			}]
 			x: -8.5d
-			y: 20.0d
+			y: 24.0d
 		}
 		{
 			dependencies: ["64C1F773CA05847E"]
@@ -846,10 +968,15 @@
 					item: { Count: 3, id: "create:crushed_raw_iron" }
 					type: "item"
 				}
+				{
+					id: "109BC18BBA5F82E5"
+					item: "immersiveengineering:raw_aluminum"
+					type: "item"
+				}
 			]
 			title: "Renewable Iron"
-			x: 1.0d
-			y: 6.5d
+			x: 0.0d
+			y: 11.5d
 		}
 		{
 			dependencies: ["7DB91F364892F863"]
@@ -886,10 +1013,11 @@
 			]
 			title: "Echoes in the Void"
 			x: -8.5d
-			y: 24.5d
+			y: 28.5d
 		}
 		{
 			can_repeat: true
+			description: ["The guidebook on building the Reality Frame gives you a handy visualiser to aid in constructing the multiblock."]
 			icon: {
 				Count: 1
 				id: "patchouli:guide_book"
@@ -917,12 +1045,14 @@
 			}]
 			title: "Building a Reality Frame"
 			x: 8.0d
-			y: 40.0d
+			y: 44.0d
 		}
 		{
+			description: ["The Industrial Fermenter can produce the Ethanol that will be needed to make Phenolic Resin in the Refinery."]
 			icon: "immersiveengineering:fermenter"
 			id: "6DB9FC4B11904EE5"
 			shape: "gear"
+			subtitle: "Industrial Keg"
 			tasks: [
 				{
 					count: 2L
@@ -967,8 +1097,8 @@
 				}
 			]
 			title: "Industrial Fermenter"
-			x: -8.5d
-			y: 4.0d
+			x: -8.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["5FD115F71D4F8E01"]
@@ -976,12 +1106,14 @@
 				"With the Dimensional Stabiliser you can load chunks remotely. "
 				""
 				"This is essential for setting up a mining outpost."
+				""
+				"You will need local power generation. The Thermoelectric Generator can be a good solution to this problem."
 			]
 			icon: "mekanism:dimensional_stabilizer"
 			id: "6A05A3E430180A39"
 			rewards: [{
-				id: "449FFDBE33180E9B"
-				item: "create:track_station"
+				id: "0274E9E9E5456FAA"
+				item: "supplementaries:confetti_popper"
 				type: "item"
 			}]
 			subtitle: "Loading what you are not observing"
@@ -991,7 +1123,199 @@
 				type: "item"
 			}]
 			x: 4.0d
-			y: 11.0d
+			y: 17.0d
+		}
+		{
+			icon: "kubejs:battery"
+			id: "45A3201920266E62"
+			shape: "square"
+			tasks: [
+				{
+					id: "50A94EEA437E23DE"
+					item: "kubejs:battery"
+					optional_task: true
+					type: "item"
+				}
+				{
+					amount: 1000L
+					fluid: "tconstruct:molten_zinc"
+					id: "6B627AB5A00D00B8"
+					optional_task: true
+					type: "fluid"
+				}
+				{
+					id: "5FE0F6140220D6E4"
+					item: "create:zinc_ingot"
+					type: "item"
+				}
+			]
+			title: "AAA battery"
+			x: 8.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["36FA0B2177D6D17C"]
+			icon: {
+				Count: 1
+				id: "endrem:old_eye"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "28DF9CE983663C3C"
+			shape: "hexagon"
+			tasks: [
+				{
+					id: "55021825E59E0198"
+					item: {
+						Count: 1
+						id: "tiab:time_in_a_bottle"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "4D4702F3ACEBFD49"
+					item: "kubejs:overclocked_clock"
+					type: "item"
+				}
+				{
+					id: "47625808B48C6DBB"
+					item: {
+						Count: 1
+						id: "endrem:old_eye"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Old Eye"
+			x: 8.0d
+			y: 40.0d
+		}
+		{
+			dependencies: ["73CAD8D4E107FD6A"]
+			description: ["The ME Drive can hold multiple Storage Cells and is a powerful upgrade to your storage network."]
+			id: "3E01F081825DD473"
+			tasks: [{
+				id: "44B44F23F764B849"
+				item: "ae2:drive"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["2514C72B5F5115B8"]
+			description: [
+				"With confusing powder and a Crucible you can convert lead into gold."
+				""
+				"The contraption needed to automate the Crucible might take some tinkering, but it is possible."
+			]
+			icon: "minecraft:gold_ingot"
+			id: "491DE9FB1376D10E"
+			subtitle: "No need for a Philosopher's Stone"
+			tasks: [{
+				id: "5AF2031ED9FB94D5"
+				title: "I have build this contraption"
+				type: "checkmark"
+			}]
+			title: "Renewable Gold"
+			x: -2.0d
+			y: 36.0d
+		}
+		{
+			dependencies: ["5CE78F3B9E2BDC0F"]
+			description: [
+				"You can turn Light Oil into Refined Fuel."
+				""
+				"Blazes will get superheated when you give them a straw and pump Refined Fuel into them. This will make your steam engine burn a whole lot brighter."
+			]
+			icon: "thermal:refined_fuel_bucket"
+			id: "641ACE318273962A"
+			tasks: [
+				{
+					id: "09794B81B3381C9C"
+					item: "createaddition:straw"
+					type: "item"
+				}
+				{
+					id: "66F816A9CA9EBB68"
+					item: "create:blaze_burner"
+					type: "item"
+				}
+				{
+					amount: 1000L
+					fluid: "thermal:refined_fuel"
+					id: "4DF4BA56B93DA6AA"
+					optional_task: true
+					type: "fluid"
+				}
+			]
+			title: "Refined Fuel"
+			x: -2.0d
+			y: 28.5d
+		}
+		{
+			dependencies: ["64C1F773CA05847E"]
+			description: [
+				"With this setup you can make renewable zinc."
+				""
+				"It might be recommended to make a train network through the nether to pick up the Asurine."
+			]
+			icon: "create:asurine"
+			id: "7B6D55B255237469"
+			shape: "square"
+			tasks: [
+				{
+					id: "6F5014A8ADE62F33"
+					item: "thermal:device_rock_gen"
+					type: "item"
+				}
+				{
+					id: "3EFA99AC7A3ADCFB"
+					item: "create:asurine"
+					type: "item"
+				}
+				{
+					count: 3L
+					id: "7538397F4F1D9284"
+					item: { Count: 3, id: "create:crushed_raw_zinc" }
+					type: "item"
+				}
+			]
+			title: "Renewable Zinc"
+			x: 1.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["246A2048B0070B20"]
+			description: [
+				"The Wall Piercer can be used to destroy the near-indestructible walls of the backrooms."
+				""
+				"Simply place a Wall Piercer on either side of a wall and right-click on one of them to remove the block that is between them."
+				""
+				""
+				"{image:kubejs:textures/quests/wall_piercer.png width:190 height:100 align:center}"
+			]
+			id: "1BE7580AE542AD1A"
+			rewards: [{
+				id: "795B9FF63B49B930"
+				item: "kubejs:party_popper"
+				type: "item"
+			}]
+			subtitle: "Parry This!"
+			tasks: [{
+				count: 2L
+				id: "119B313DB024BF24"
+				item: { Count: 2, id: "kubejs:wall_destroyer" }
+				type: "item"
+			}]
+			title: "The Wall Piercer"
+			x: 4.0d
+			y: 18.5d
 		}
 	]
 	title: "Chapter 4"

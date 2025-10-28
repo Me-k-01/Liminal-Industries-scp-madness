@@ -1,7 +1,7 @@
 ServerEvents.recipes(event => {
 	
 
-	event.remove({id: 'mekanism:infusion_conversion/redstone/from_dust'})
+	//event.remove({id: 'mekanism:infusion_conversion/redstone/from_dust'})
 	event.remove({id: 'mekanism:infusion_conversion/redstone/from_block'})
 
 	event.remove({id: 'mekanism:infusion_conversion/carbon/from_coal'})

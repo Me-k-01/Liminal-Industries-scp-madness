@@ -70,6 +70,8 @@ ServerEvents.recipes(event => {
 	)
 
 	event.remove({output: 'actuallyadditions:empowered_void_crystal_block'})
+	event.shapeless('9x actuallyadditions:empowered_void_crystal', ['actuallyadditions:empowered_void_crystal_block'])
+	event.shapeless('actuallyadditions:empowered_void_crystal_block', ['9x actuallyadditions:empowered_void_crystal'])
 	empowering(
 		'actuallyadditions:empowered_void_crystal_block',
 		'actuallyadditions:void_crystal_block',

@@ -76,8 +76,8 @@ ServerEvents.recipes(event => {
 
 //advanced
 
-	event.remove({output: 'mekanism:osmium_compressor'})
-	event.shaped('mekanism:osmium_compressor', [
+	event.remove({output: 'mekanism:chemical_oxidizer'})
+	event.shaped('mekanism:chemical_oxidizer', [
 		'ECE', 
 		'BAB',
 		'EDE'  
@@ -96,7 +96,7 @@ ServerEvents.recipes(event => {
 		'EDE'  
 		],{
 		A: 'mekanism:steel_casing', 
-		B: 'mekanism:basic_control_circuit',
+		B: 'mekanism:advanced_control_circuit',
 		C: 'mekanism:dynamic_tank',
 		D: 'mekanism:basic_chemical_tank',
 		E: 'mekanism:ingot_osmium'
@@ -130,18 +130,6 @@ ServerEvents.recipes(event => {
 		E: 'mekanism:ingot_osmium'
 	})
 
-	event.remove({output: 'mekanism:chemical_oxidizer'})
-	event.shaped('mekanism:chemical_oxidizer', [
-		'ECE', 
-		'BAB',
-		'ECE'  
-		],{
-		A: 'mekanism:steel_casing', 
-		B: 'mekanism:elite_control_circuit',
-		C: 'mekanism:basic_chemical_tank',
-		E: 'mekanism:ingot_osmium'
-	})
-
 	event.remove({output: 'mekanism:antiprotonic_nucleosynthesizer'})
 	event.shaped('mekanism:antiprotonic_nucleosynthesizer', [
 		'ECE', 
@@ -172,7 +160,6 @@ ServerEvents.recipes(event => {
 
 //other
 	event.replaceInput({type: 'enderio:slicing'}, 'enderio:energetic_alloy_ingot', 'enderio:soularium_ingot')
-	event.replaceOutput({output: 'create:track'}, 'create:track', '10x create:track')
 	event.remove({id: 'tconstruct:smeltery/casting/ender/pearl'})
 	event.remove({id: 'enderio:alloy_smelting/ender_pearl'})
 

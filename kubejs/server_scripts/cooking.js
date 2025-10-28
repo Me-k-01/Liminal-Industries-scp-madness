@@ -13,6 +13,13 @@ ServerEvents.recipes(event => {
         C: 'minecraft:stick'
     })
 
+    event.remove({output: 'miners_delight:weird_caviar'})
+	  event.shapeless('2x miners_delight:weird_caviar', [
+		  'minecraft:bowl',
+		  'minecraft:bowl',
+		  'miners_delight:silverfish_eggs'
+	  ])
+
     event.remove({output: 'brewinandchewin:sweet_berry_jam'})
     event.custom({
       "type": "farmersdelight:cooking",

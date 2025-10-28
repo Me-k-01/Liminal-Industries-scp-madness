@@ -1,5 +1,6 @@
 stopsound @a master mekanism:tile.machine.antiprotonic_nucleosynthesizer
 
+execute at @e[type=marker,name=reality_core,tag=running,limit=1,sort=nearest] run fill ~1 ~1 ~1 ~-1 ~-1 ~-1 air replace antiblocksrechiseled:bright_black
 execute at @e[type=marker,name=reality_core,tag=running,limit=1,sort=nearest] run fill ~ ~ ~ ~ ~ ~ air replace light
 
 execute at @e[type=marker,name=reality_core,tag=running,limit=1,sort=nearest] run playsound minecraft:ambient.warped_forest.mood master @a ~ ~ ~ 1 2
@@ -26,6 +27,8 @@ execute at @e[type=marker,name=reality_core,tag=diamonds,limit=1,sort=nearest] p
 execute at @e[type=marker,name=reality_core,tag=blaze,limit=1,sort=nearest] positioned ~-3 ~-3 ~-3 run place template backrooms:reality_blaze
 execute at @e[type=marker,name=reality_core,tag=pyramid,limit=1,sort=nearest] positioned ~-3 ~-3 ~-3 run place template backrooms:reality_pyramid
 execute at @e[type=marker,name=reality_core,tag=end,limit=1,sort=nearest] positioned ~-3 ~-3 ~-3 run place template backrooms:reality_end
+execute at @e[type=marker,name=reality_core,tag=room,limit=1,sort=nearest] positioned ~-3 ~-3 ~-3 run place template backrooms:reality_room
+execute at @e[type=marker,name=reality_core,tag=portal,limit=1,sort=nearest] positioned ~-3 ~-3 ~-3 run place template backrooms:reality_portal
 execute at @e[type=marker,name=reality_core,tag=error,limit=1,sort=nearest] positioned ~-3 ~-3 ~-3 run place template backrooms:reality_error
 execute at @e[type=marker,name=reality_core,tag=blackhole,limit=1,sort=nearest] positioned ~ ~ ~ run function backrooms:blackhole
 

@@ -74,4 +74,11 @@ ServerEvents.recipes(event => {
 		event.recipes.createDeploying('minecraft:snowball', ['minecraft:snowball', 'thermal:blizz_rod'])
     ]).transitionalItem('minecraft:snowball',).loops(250)
 
+	event.recipes.create.sequenced_assembly([
+        'kubejs:cobblestone_bucket'
+    ],  'minecraft:bucket', [
+		event.recipes.createDeploying('minecraft:bucket', ['minecraft:bucket', 'minecraft:cobblestone']),
+    ]).transitionalItem('minecraft:bucket',).loops(10)
+	event.smelting('minecraft:lava_bucket', 'kubejs:cobblestone_bucket')
+
 })

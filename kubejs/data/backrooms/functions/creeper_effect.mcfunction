@@ -8,19 +8,13 @@ particle minecraft:sculk_soul ~ ~1 ~ 0 0 0 0.3 20 force
 particle minecraft:sonic_boom ~ ~ ~ 2 2 2 2 20 force
 particle minecraft:dust_color_transition 0.1 0.1 0.1 2 0 0.6 0.6 ~ ~ ~ 2 2 2 0.1 200 force
 
-tag @a[distance=..5] add aoe
-execute as @e[tag=aoe] run damage @s 12 minecraft:explosion by @e[type=creeper,limit=1,sort=nearest]
-tag @a remove aoe
+summon tnt ~ ~ ~
 #fill ~3 ~3 ~3 ~-3 ~-3 ~-3 kubejs:sculk2 replace #kubejs:backrooms_enviroment
 #fill ~3 ~3 ~3 ~-3 ~-3 ~-3 kubejs:sculk_slab replace #minecraft:slabs
 place feature minecraft:sculk_patch_deep_dark ~ ~ ~
 fill ~5 ~40 ~5 ~-5 ~-5 ~-5 air replace light
 fill ~5 ~40 ~5 ~-5 ~-5 ~-5 kubejs:ceilling_lamp_off replace kubejs:ceilling_lamp
 effect give @a[distance=..5] darkness 5 0 true
-
-scoreboard players set max RNG_Constant 2
-function backrooms:rng
-execute if score RNG RNG_Variable matches 0 run function backrooms:spawner_creeper
 
 tag @e[type=creeper,limit=1,sort=nearest] add exploded
 tp @e[type=creeper,tag=exploded] ~ ~100 ~

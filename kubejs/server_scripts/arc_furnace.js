@@ -34,13 +34,31 @@ ServerEvents.recipes(event => {
             "time": 100
           })
         }
-    
-    arc_furnace(
-      'immersiveengineering:ingot_steel', 
-      'minecraft:iron_ingot', 
-      'immersiveengineering:dust_coke',
-      'immersiveengineering:dust_coke'
-    )
+
+      event.custom({
+          "type": "immersiveengineering:arc_furnace",
+          "additives": [
+            {
+              "tag": "forge:coal_coke"
+            }
+          ],
+          "energy": 30000,
+          "input": {
+            "item": "minecraft:iron_ingot"
+          },
+          "results": [
+            {
+              "base_ingredient": {
+                "item": "immersiveengineering:ingot_steel"
+              },
+              "count": 1
+            }
+          ],
+          "slag": {
+              "item": "immersiveengineering:slag"
+          },
+          "time": 50
+        })
 
     arc_furnace(
       'enderio:dark_steel_ingot',

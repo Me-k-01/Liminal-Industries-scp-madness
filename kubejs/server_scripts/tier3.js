@@ -2,8 +2,8 @@ ServerEvents.recipes(event => {
 
 
 	event.shaped('kubejs:half_frame_top', [
-		'AAA', 
-		'ABA',
+		'ABA', 
+		'A A',
 		'   '  
 		],{
 		A: 'immersiveengineering:light_engineering',
@@ -12,8 +12,8 @@ ServerEvents.recipes(event => {
 
 	event.shaped('kubejs:half_frame_bottom', [
 		'   ', 
-		'ABA',
-		'AAA'  
+		'A A',
+		'ABA'  
 		],{
 		A: 'immersiveengineering:heavy_engineering',
 		B: 'actuallyadditions:void_crystal'
@@ -62,6 +62,12 @@ ServerEvents.recipes(event => {
 		'ae2:sky_stone_block',
 		Item.of('ae2:sky_dust').withChance(0.5)
 	],	'ae2:sky_stone_block')
+
+	event.recipes.createCrushing([
+		'moyai:moyai',
+		Item.of('minecraft:cobblestone').withChance(0.5),
+		Item.of('minecraft:ghast_tear').withChance(0.01)
+	],	'moyai:moyai')
 
 	event.recipes.thermal.smelter('kubejs:fluorescent_tube', [ 
 		'minecraft:glass',
@@ -145,5 +151,29 @@ ServerEvents.recipes(event => {
     })
 
 	event.remove({id: 'thermal:dirt_crafting'})
+	event.recipes.create.deploying(['kubejs:soul_fuse'], ['kubejs:empty_fuse', 'eidolon:soulfire_wand'])
 
+	event.recipes.createSequencedAssembly([
+		Item.of('thermal:lead_dust').withChance(0.2),
+		Item.of('create:pulp').withChance(0.8)
+		], 'kubejs:wallpaper', [
+			event.recipes.createFilling('kubejs:wallpaper', ['kubejs:wallpaper', Fluid.of('immersiveengineering:redstone_acid', 10)])
+	]).transitionalItem('kubejs:wallpaper').loops(1)
+
+	event.shaped('kubejs:putty_knife', [
+		'  A', 
+		' B ',
+		'   '  
+	],{
+		A: 'create:iron_sheet',
+		B: 'minecraft:stick'
+	})
+
+	event.recipes.create.sequenced_assembly([
+		Item.of('immersiveengineering:ingot_steel').withChance(0.9),
+		Item.of('kubejs:cracked_steel').withChance(0.1)
+	], 'kubejs:hot_steel', [
+		event.recipes.createFilling('kubejs:hot_steel', ['kubejs:hot_steel', Fluid.of('minecraft:water', 100)])
+	]).transitionalItem('kubejs:hot_steel').loops(1)
+	
 })

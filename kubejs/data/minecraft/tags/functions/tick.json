@@ -23,6 +23,7 @@
                     "backrooms:end",
                     "backrooms:dragons",
                     "backrooms:blackhole_ambient",
-                    "backrooms:circuit_breaker_broken"
+                    "backrooms:zombified_piglin",
+                    "backrooms:noclip_fix"
                 ]
 }

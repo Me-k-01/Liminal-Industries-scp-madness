@@ -11,7 +11,6 @@ ServerEvents.recipes(event => {
 	})
 
 	event.remove({output: 'createaddition:alternator'})
-	event.remove({output: 'createaddition:electric_motor'})
 	event.shaped('createaddition:alternator', [
 		' B ', 
 	  	'ACA',
@@ -21,6 +20,18 @@ ServerEvents.recipes(event => {
 	  	B: 'create:shaft',
 		C: 'immersiveengineering:coil_lv',
 	  	D: 'immersiveengineering:light_engineering'
+  })
+
+  	event.remove({output: 'createaddition:electric_motor'})
+	event.shaped('createaddition:electric_motor', [
+		' B ', 
+	  	'ACA',
+	  	'ADA'  
+	  	],{
+	  	A: 'create:brass_sheet',
+	  	B: 'create:shaft',
+		C: 'immersiveengineering:coil_mv',
+	  	D: 'immersiveengineering:heavy_engineering'
   })
 
 	event.recipes.create.compacting('kubejs:concrete_brick', [
@@ -99,6 +110,19 @@ ServerEvents.recipes(event => {
 		"time": 100
 	})
 
+	event.remove({id: 'immersiveengineering:cokeoven/charcoal'})
+	event.custom({
+		"type": "immersiveengineering:coke_oven",
+		"creosote": 250,
+		"input": {
+			"tag": "minecraft:logs_that_burn"
+		},
+		"result": {
+			"item": "minecraft:charcoal"
+		},
+		"time": 100
+	})
+
 	event.remove({id: 'immersiveengineering:blastfurnace/steel'})
 	event.remove({id: 'immersiveengineering:blastfurnace/steel_block'})
 	event.custom({
@@ -140,5 +164,7 @@ ServerEvents.recipes(event => {
   	})
 
     event.replaceInput({id: 'minecraft:flint_and_steel'}, 'minecraft:iron_ingot', 'minecraft:flint')
+
+	event.recipes.create.mixing([Item.of('supplementaries:ash').withChance(0.2)], 'kubejs:wallpaper').lowheated()
 
 })

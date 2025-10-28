@@ -13,7 +13,17 @@
 				"6425A4B344A3E70F"
 				"16BED30DF56C2600"
 			]
+			description: [
+				"Osmium can be found in some of the Reality Chips."
+				""
+				"It is up to you to figure out which ones..."
+			]
 			id: "2A8B73B53DE73CC6"
+			rewards: [{
+				id: "342B6FFEA40A23F7"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			tasks: [{
 				id: "4E23BA1760FD6CF1"
 				item: "mekanism:ingot_osmium"
@@ -36,11 +46,6 @@
 				{
 					id: "69C59761E498F70E"
 					item: "minecraft:raw_iron"
-					type: "item"
-				}
-				{
-					id: "3F7099F1E848ED49"
-					item: "minecraft:raw_copper"
 					type: "item"
 				}
 				{
@@ -71,6 +76,11 @@
 		{
 			dependencies: ["2A8B73B53DE73CC6"]
 			id: "5F3345E00BDA38CF"
+			rewards: [{
+				id: "236B0D59A6B85533"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			tasks: [{
 				id: "11EEA87ABB4EA12E"
@@ -124,6 +134,11 @@
 		{
 			dependencies: ["7293389236F492AE"]
 			id: "0469BCAF1F2A490F"
+			rewards: [{
+				id: "0241E62177D321AD"
+				item: "kubejs:party_popper"
+				type: "item"
+			}]
 			shape: "circle"
 			size: 2.0d
 			tasks: [{
@@ -187,10 +202,11 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 73.5d
+			y: 75.0d
 		}
 		{
 			dependencies: ["16BED30DF56C2600"]
+			description: ["One of the Reality Chips will generate Endstone. The Endstone can be crushed to yeild Ender Dust."]
 			icon: "ae2:ender_dust"
 			id: "6DA0C1A9A1E1AC7B"
 			rewards: [{
@@ -242,6 +258,11 @@
 		{
 			dependencies: ["4D4A26DE9CDBAA45"]
 			id: "7EBD9990CD506CE0"
+			rewards: [{
+				id: "777F2D1C7DF109B7"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			tasks: [{
 				id: "6D4C065958B697C3"
@@ -260,79 +281,38 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 85.0d
+			y: 86.5d
 		}
 		{
 			dependencies: ["6991AF4506CB5086"]
 			id: "1C652ACF84E2883C"
+			rewards: [{
+				id: "70D3436E811BCD67"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			tasks: [{
 				id: "57D514C6452FA443"
 				item: "mekanism:chemical_injection_chamber"
 				type: "item"
 			}]
 			x: 0.0d
-			y: 76.0d
+			y: 77.5d
 		}
 		{
 			dependencies: ["3BDAAFC3E00E1C72"]
+			description: [
+				"Placing a bucket of magma will summon a small magma cube."
+				""
+				"If the magma cube is eaten by a frog it will drop a froglight."
+			]
 			icon: "minecraft:ochre_froglight"
 			id: "34D7245BC72FBAD5"
-			rewards: [
-				{
-					id: "0360E3B0698DEB5F"
-					item: {
-						Count: 1
-						id: "fairylights:hanging_lights"
-						tag: {
-							pattern: [{
-								Count: 1b
-								id: "fairylights:fairy_light"
-								tag: {
-									color: 16701501
-								}
-							}]
-							string: "fairylights:black_string"
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "343527B24A2C3F8F"
-					item: {
-						Count: 1
-						id: "fairylights:hanging_lights"
-						tag: {
-							pattern: [{
-								Count: 1b
-								id: "fairylights:fairy_light"
-								tag: {
-									color: 16351261
-								}
-							}]
-							string: "fairylights:black_string"
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "79E6C8AE63DCC3AB"
-					item: {
-						Count: 1
-						id: "fairylights:hanging_lights"
-						tag: {
-							pattern: [{
-								Count: 1b
-								id: "fairylights:fairy_light"
-								tag: {
-									color: 11546150
-								}
-							}]
-							string: "fairylights:black_string"
-						}
-					}
-					type: "item"
-				}
-			]
+			rewards: [{
+				id: "248315258BBA0EE3"
+				item: "plushie_buddies:plushie_magma_cube"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "42ABD6B70E47B6E2"
@@ -351,8 +331,14 @@
 		}
 		{
 			dependencies: ["08AA2EDF465DE029"]
+			description: ["Frogs need to be summoned into existence in order to start making froglights."]
 			icon: "minecraft:frogspawn"
 			id: "3BDAAFC3E00E1C72"
+			rewards: [{
+				id: "3FAEF626D730FB3B"
+				item: "plushie_buddies:plushie_frog"
+				type: "item"
+			}]
 			tasks: [
 				{
 					count: 2L
@@ -384,7 +370,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 82.5d
+			y: 84.0d
 		}
 		{
 			dependencies: [
@@ -438,18 +424,44 @@
 		}
 		{
 			dependencies: ["5EE912358F2227BA"]
+			description: [
+				"To summon more complicated mobs you will need to get Moderate Soul Gems."
+				""
+				"A health sacrifice must be made to complete the ritual. Health from any mob can be used. If no other mob is nearby then the health will be taken from the nearest player instead."
+			]
+			icon: "kubejs:moderate_soul_gem"
 			id: "08AA2EDF465DE029"
-			tasks: [{
-				id: "7A6A8FCEE4A00064"
+			rewards: [{
+				count: 2
+				id: "7971960BAF8D9C94"
 				item: "kubejs:moderate_soul_gem"
 				type: "item"
 			}]
+			subtitle: "A Worthy Sacrifice"
+			tasks: [
+				{
+					id: "13641B3DF8F4318F"
+					item: "eidolon:necrotic_focus"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "20B52DBF82A26666"
+					item: "kubejs:moderate_soul_gem"
+					type: "item"
+				}
+			]
 			title: "Moderate Summoning"
 			x: 0.0d
 			y: 42.5d
 		}
 		{
 			dependencies: ["08AA2EDF465DE029"]
+			description: [
+				"Wither skeletons can be summoned in. They will always drop their skull exactly like other summoned mobs."
+				""
+				"Natural coal can be obtained with the Reality Frame."
+			]
 			icon: {
 				Count: 1
 				id: "endrem:wither_eye"
@@ -458,6 +470,19 @@
 				}
 			}
 			id: "557617650FFA7BF8"
+			rewards: [
+				{
+					id: "2D0FBF5BFF8D1306"
+					item: "plushie_buddies:plushie_wither"
+					type: "item"
+				}
+				{
+					count: 3
+					id: "7885CE282162AE91"
+					item: "plushie_buddies:plushie_wither_skeleton"
+					type: "item"
+				}
+			]
 			shape: "hexagon"
 			tasks: [
 				{
@@ -500,6 +525,11 @@
 				"46BDA25C56FAA3E0"
 			]
 			id: "020D04D0081B0376"
+			rewards: [{
+				id: "5A7633D75CB683D5"
+				item: "kubejs:party_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			size: 2.0d
 			tasks: [{
@@ -514,19 +544,6 @@
 			dependencies: ["6425A4B344A3E70F"]
 			icon: "kubejs:reality_controller_running"
 			id: "16BED30DF56C2600"
-			rewards: [
-				{
-					count: 3
-					id: "0CDAB4E41CA24CF9"
-					item: "kubejs:party_popper"
-					type: "item"
-				}
-				{
-					id: "2BC7B82C0195BB7D"
-					item: "botania:record_gaia_1"
-					type: "item"
-				}
-			]
 			shape: "gear"
 			size: 3.0d
 			tasks: [{
@@ -617,10 +634,13 @@
 			]
 			title: "Cryptic Eye"
 			x: 0.0d
-			y: 93.0d
+			y: 94.5d
 		}
 		{
-			dependencies: ["020D04D0081B0376"]
+			dependencies: [
+				"020D04D0081B0376"
+				"71B9B26E6BA141F3"
+			]
 			id: "245653B3451C76FA"
 			shape: "hexagon"
 			tasks: [{
@@ -635,7 +655,7 @@
 				type: "item"
 			}]
 			x: 3.0d
-			y: 73.0d
+			y: 75.0d
 		}
 		{
 			dependencies: ["20BB0A14D35143A3"]
@@ -658,6 +678,11 @@
 		{
 			dependencies: ["4D4A26DE9CDBAA45"]
 			id: "1C7A15BF5B8AF3FB"
+			rewards: [{
+				id: "7C844BDBE7B374D1"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
 			shape: "gear"
 			tasks: [{
 				id: "6183DBD92D769449"
@@ -689,6 +714,7 @@
 		}
 		{
 			dependencies: ["16BED30DF56C2600"]
+			description: ["A few Reality Chips have Netherrack in them. This can be used to make Blaze Cakes."]
 			icon: "create:blaze_cake"
 			id: "7321D8BB155B472C"
 			rewards: [{
@@ -734,7 +760,7 @@
 				type: "item"
 			}]
 			x: 3.0d
-			y: 91.0d
+			y: 92.5d
 		}
 		{
 			dependencies: [
@@ -756,7 +782,7 @@
 				type: "item"
 			}]
 			x: -3.0d
-			y: 91.0d
+			y: 92.5d
 		}
 		{
 			dependencies: ["46BDA25C56FAA3E0"]
@@ -838,6 +864,11 @@
 			dependencies: ["2CE95C36B45CCF4B"]
 			icon: "ae2:quantum_entangled_singularity"
 			id: "2C65A876EF00F270"
+			rewards: [{
+				id: "1FDAE3D6EA8381A4"
+				item: "kubejs:party_popper"
+				type: "item"
+			}]
 			size: 2.0d
 			tasks: [
 				{
@@ -859,12 +890,21 @@
 			]
 			title: "String Theory"
 			x: 0.0d
-			y: 88.0d
+			y: 89.5d
 		}
 		{
 			description: ["You can summon Dragon's Breath using the summoning brazier. You need to be quick to pick it up, so have your bottles ready."]
 			icon: "minecraft:dragon_breath"
 			id: "285A77D18A6A95CF"
+			rewards: [{
+				id: "771D922CD73C75BE"
+				item: {
+					Count: 1
+					id: "plushie_buddies:plushie_enderdragon"
+					tag: { }
+				}
+				type: "item"
+			}]
 			shape: "square"
 			subtitle: "Fire comes from the Breath"
 			tasks: [
@@ -882,7 +922,7 @@
 			]
 			title: "Dragon's Breath"
 			x: -3.0d
-			y: 88.0d
+			y: 89.5d
 		}
 		{
 			dependencies: ["4D4A26DE9CDBAA45"]
@@ -947,6 +987,11 @@
 			]
 			icon: "kubejs:data_chip_infinity"
 			id: "6474DAB2246BD65F"
+			rewards: [{
+				id: "5AEB9F48F4B9CB26"
+				item: "kubejs:party_popper"
+				type: "item"
+			}]
 			size: 2.0d
 			subtitle: "Warping in a Black Hole"
 			tasks: [
@@ -978,7 +1023,7 @@
 			]
 			title: "Inside these Equations there are Monsters"
 			x: 0.0d
-			y: 79.0d
+			y: 80.5d
 		}
 		{
 			dependencies: ["08AA2EDF465DE029"]
@@ -997,6 +1042,37 @@
 			}]
 			x: -4.0d
 			y: 47.0d
+		}
+		{
+			icon: "minecraft:beehive"
+			id: "71B9B26E6BA141F3"
+			rewards: [
+				{
+					count: 3
+					id: "7848A53424C8FE3D"
+					item: "minecraft:honey_bottle"
+					type: "item"
+				}
+				{
+					id: "26F231581A052D0B"
+					item: "plushie_buddies:plushie_bee"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "7B480A6A299153B2"
+					item: "minecraft:beehive"
+					type: "item"
+				}
+				{
+					id: "1FA8EA43AC45B072"
+					item: "minecraft:honeycomb"
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 71.0d
 		}
 	]
 	title: "Chapter 5"

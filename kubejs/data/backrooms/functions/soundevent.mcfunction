@@ -15,7 +15,7 @@ execute if score RNG RNG_Variable matches 9 run playsound minecraft:custom.hum5 
 execute if score RNG RNG_Variable matches 10 run playsound minecraft:custom.hum6 ambient @a ~ ~ ~ 10000 1
 execute if score RNG RNG_Variable matches 11 run playsound minecraft:custom.fan ambient @a ~ ~ ~ 10000 1
 execute if score RNG RNG_Variable matches 12 run playsound minecraft:custom.infuser ambient @a ~ ~ ~ 10000 1
-execute if score RNG RNG_Variable matches 13 run playsound minecraft:custom.cave16 ambient @a ~ ~ ~ 10000 1
+execute if score RNG RNG_Variable matches 13 run playsound minecraft:custom.hum1 ambient @a ~ ~ ~ 10000 1
 execute if score RNG RNG_Variable matches 14 run playsound minecraft:custom.talking ambient @a ~ ~ ~ 10000 1
 execute if score RNG RNG_Variable matches 15 run playsound minecraft:custom.highway ambient @a ~ ~ ~ 10000 1
 execute if score RNG RNG_Variable matches 16 run playsound minecraft:custom.greg ambient @a ~ ~ ~ 10000 1

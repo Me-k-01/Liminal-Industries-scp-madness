@@ -49,13 +49,16 @@ let create = (block, item, result) => {
 	create("immersiveengineering:fiberboard","create:brass_ingot","create:brass_casing")
 	create("create:chute", "create:golden_sheet", "create:smart_chute")
 	create("create:railway_casing", "actuallyadditions:diamatine_crystal", "mekanism:dimensional_stabilizer")
+	create("minecraft:barrel", "create:iron_sheet", "create:item_vault")
+	create("supplementaries:cage", "immersiveengineering:ingot_steel", "create:empty_blaze_burner")
+	create("supplementaries:timber_frame", "kubejs:wallpaper", "kubejs:wallpaper_fake")
 
 //Andesite Casings
 	create("create:andesite_casing","minecraft:compass","create:speedometer")
 	event.shapeless('create:speedometer', ['create:stressometer'])
 
 	create("create:andesite_casing","minecraft:sticky_piston","create:sticky_mechanical_piston")
-	event.shapeless('create:sticky_mechanical_piston', ['create:sticky_mechanical_piston', '#forge:slimeballs'])
+	event.shapeless('create:sticky_mechanical_piston', ['create:mechanical_piston', '#forge:slimeballs'])
 
 	create("create:andesite_casing","thermal:saw_blade","create:mechanical_saw")
 	create("create:andesite_casing","create:chute","create:portable_storage_interface")
@@ -68,7 +71,7 @@ let create = (block, item, result) => {
 	create("create:andesite_casing","create:crushing_wheel","create:mechanical_roller")
 	create("create:andesite_casing","supplementaries:rope","create:rope_pulley")
 	create("create:andesite_casing","minecraft:piston","create:mechanical_piston")
-	create("create:andesite_casing","create:andesite_alloy","create:depot")
+	create("create:andesite_casing","minecraft:cobblestone_slab","create:depot")
 	create("create:andesite_casing","create:cogwheel","create:millstone")
 	create("immersiveengineering:light_engineering","thermal:drill_head","thermal:device_rock_gen")
 	create("create:andesite_casing", "minecraft:stone_button", "create:contraption_controls")

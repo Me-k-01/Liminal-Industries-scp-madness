@@ -7,7 +7,6 @@ execute as @e[type=marker,name=reality_core,scores={sound=200..}] run scoreboard
 
 #constant
 execute at @e[type=marker,name=reality_core,tag=running] run effect give @e[distance=..5] wither 1 9 true
-execute at @e[type=marker,name=reality_core,tag=running] at @e[distance=1..5,type=!item] run particle minecraft:dust_color_transition 0 1 1 5 0 0.3 1 ~ ~ ~ 3 3 3 0.1 1 force
 execute at @e[type=marker,name=reality_core,tag=running] run particle supplementaries:rotation_trail_emitter ~ ~ ~ 0 0 0 1 1 force
 #execute at @e[type=marker,name=reality_core,tag=running] run particle minecraft:portal ~ ~ ~ 0 0 0 2.5 1 force
 

@@ -141,7 +141,7 @@ ServerEvents.recipes(event => {
 	})
 
 	event.recipes.createMixing('create:chromatic_compound', [
-		Fluid.of('cofh_core:experience', 100),
+		Fluid.of('create_enchantment_industry:experience', 5),
 		'mekanism:dye_base',
 		'ae2:fluix_dust'
 	]).superheated()
@@ -167,6 +167,12 @@ ServerEvents.recipes(event => {
 		"count": 1,
 		"item": "endrem:black_eye"
 		}
+	})
+
+	event.custom({
+		"type":"mekanism:oxidizing",
+		"input":{"ingredient":{"item":"mekanism:ingot_osmium"}},
+		"output":{"amount":200,"gas":"mekanism:osmium"}
 	})
 
 	event.shaped('kubejs:ai', [
@@ -223,6 +229,9 @@ ServerEvents.recipes(event => {
 	event.replaceInput({output: 'enderio:sag_mill'}, 'minecraft:piston', 'thermal:machine_pulverizer')
 	event.replaceInput({output: 'mekanism:metallurgic_infuser'}, 'minecraft:furnace', 'thermal:machine_furnace')
 	event.replaceInput({output: 'mekanism:enrichment_chamber'}, 'mekanism:steel_casing', 'enderio:void_chassis')
+	event.replaceInput({output: 'mekanism:enrichment_chamber'}, 'minecraft:iron_ingot', 'mekanism:ingot_osmium')
 	event.replaceInput({output: 'minecraft:magma_cream'}, 'minecraft:blaze_powder', 'thermal:sulfur_dust')
+
+	event.remove({id: 'tconstruct:compat/refined_obsidian_ingot'})
 
 })

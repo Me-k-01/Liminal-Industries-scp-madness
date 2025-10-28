@@ -57,6 +57,29 @@ ServerEvents.recipes(event => {
           F: 'create:crafting_blueprint'
     })
 
+    event.remove({output: 'ae2:drive'})
+    event.shaped('ae2:drive', [
+        'CAC', 
+        'ABA',
+        'CAC'  
+        ],{
+          A: 'ae2:fluix_glass_cable', 
+          B: 'immersiveengineering:heavy_engineering',
+          C: 'ae2:chest'
+    })
+
+    event.remove({output: 'ae2:storage_bus'})
+    event.shaped('ae2:storage_bus', [
+        '   ', 
+        'BAC',
+        ' D '  
+        ],{
+          A: '#ae2:interface', 
+          B: 'ae2:logic_processor',
+          C: 'ae2:calculation_processor',
+          D: 'ae2:fluix_glass_cable'
+    })
+
 	  event.replaceInput({output: 'ae2:annihilation_core'}, 'ae2:logic_processor', 'immersiveengineering:component_electronic')
   	event.replaceInput({output: 'ae2:formation_core'}, 'ae2:logic_processor', 'immersiveengineering:component_electronic')
     event.replaceInput({output: 'ae2:terminal'}, 'ae2:logic_processor', 'immersiveengineering:component_electronic')
@@ -65,7 +88,5 @@ ServerEvents.recipes(event => {
   	event.replaceInput({output: 'ae2:cell_component_4k'}, 'ae2:calculation_processor', 'create:electron_tube')
   	event.replaceInput({output: 'ae2:cell_component_16k'}, 'ae2:calculation_processor', 'immersiveengineering:component_electronic_adv')
     event.replaceInput({output: 'ae2:cell_component_256k'}, 'ae2:calculation_processor', 'ae2:engineering_processor')
-
-    event.remove({output: 'ae2:storage_bus'})
 
 })

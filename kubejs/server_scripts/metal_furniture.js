@@ -8,9 +8,10 @@ ServerEvents.recipes(event => {
 	event.remove({ output: 'supplementaries:safe' })
 	event.remove({ output: 'mekanism:basic_chemical_tank' })
 	event.remove({ output: 	'minecraft:jukebox' })
+
 	event.shaped('refurbished_furniture:wrench', [
-		'  A', 
-		' B ',
+		' A ', 
+		' BA',
 		'B  '  
 		],{
 		  A: 'minecraft:iron_ingot', 
@@ -94,11 +95,23 @@ ServerEvents.recipes(event => {
 		270
 	)
 
+	melting(
+		'supplementaries:candle_holder', 
+		'tconstruct:molten_iron', 
+		90
+	)
+
+	melting(
+		'decorative_blocks:brazier', 
+		'tconstruct:molten_iron', 
+		90
+	)
+
 	event.remove({output:'mekanism:radioactive_waste_barrel'})
 	melting(
 		'mekanism:radioactive_waste_barrel', 
-		'tconstruct:molten_uranium', 
-		100
+		'tconstruct:molten_lead', 
+		630
 	)
 
 	event.remove({output:'supplementaries:cannonball'})
@@ -112,6 +125,12 @@ ServerEvents.recipes(event => {
 		'kubejs:battery', 
 		'tconstruct:molten_zinc', 
 		270
+	)
+
+	melting(
+		'miners_delight:copper_pot', 
+		'tconstruct:molten_copper', 
+		450
 	)
 
 	melting(
@@ -216,7 +235,7 @@ ServerEvents.recipes(event => {
 	melting(
 		'refurbished_furniture:television', 
 		'tconstruct:molten_silver', 
-		300
+		900
 	)
 /*
 	let iron_melting = (Input) => {

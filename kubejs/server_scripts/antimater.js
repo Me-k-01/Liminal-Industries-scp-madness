@@ -10,7 +10,7 @@ ServerEvents.recipes(event => {
 
             event.custom({
 				"type":"mekanism:injecting",
-				"chemicalInput":{"amount":200,
+				"chemicalInput":{"amount":2,
 				"gas":"mekanism:osmium"},
 				"itemInput":{"ingredient":{"item":"mekanism:dust_refined_obsidian"}},
 				"output":{"item":"mekanism:ingot_refined_obsidian"}
@@ -18,7 +18,7 @@ ServerEvents.recipes(event => {
 
 			event.custom({
 				"type":"mekanism:nucleosynthesizing",
-				"duration":100000,
+				"duration":100,
 				"gasInput":{"amount":1,"gas":"mekanism:antimatter"},
 				"itemInput":{"ingredient":{"item":"mekanism:ingot_refined_obsidian"}},
 				"output":{"item":"mekanism:alloy_atomic"}

@@ -13,7 +13,7 @@
 			description: [
 				"Ashes can be obtained by lighting anything that can catch fire. After the block burns up, it will make ash that can be picked up using a shovel."
 				""
-				"What to burn is entirely up to you. Wood is not super easy to come by in big quantities and the carpet and wallpaper are somehow resistent to the flames. But perhaps you can find something made out of cardboard..."
+				"What to burn is entirely up to you. Wood is not super easy to come by in big quantities and the carpet and wallpaper are somehow resistant to the flames. But perhaps you can find something made out of cardboard..."
 			]
 			icon: "supplementaries:ash"
 			id: "22FF287969C58B70"
@@ -41,7 +41,7 @@
 					id: "09BE5840BA51E445"
 					item: {
 						Count: 1
-						id: "minecraft:wooden_shovel"
+						id: "minecraft:stone_shovel"
 						tag: {
 							Damage: 0
 						}
@@ -106,6 +106,21 @@
 				"1BFE1926B47FD92D"
 				"06DADC2BB0854FB1"
 			]
+			description: [
+				"There is no wind in the Backrooms."
+				""
+				"But luckily for you, you can now make your first steam engine."
+				""
+				"All it needs is some fuel in the basic burners and a good supply of water."
+				""
+				"Water can be pumped out of an infinite water source, as shown in the image below."
+				""
+				"The steam engine will need to pump its own water; you just need to kickstart it with a Hand Crank."
+				""
+				"It should be noted that campfires do not have enough heat to power the engine."
+				""
+				"{image:kubejs:textures/quests/steam_engine.png width:200 height:100 align:center}"
+			]
 			icon: "create:steam_engine"
 			id: "594A42AEFA0A83BA"
 			rewards: [
@@ -122,6 +137,7 @@
 			]
 			shape: "gear"
 			size: 2.0d
+			subtitle: "Under Pressure"
 			tasks: [
 				{
 					id: "0D13D3BFC3429D9F"
@@ -135,9 +151,8 @@
 					type: "item"
 				}
 				{
-					count: 2L
 					id: "73D70B8AE2F77131"
-					item: { Count: 2, id: "createlowheated:basic_burner" }
+					item: "createlowheated:basic_burner"
 					type: "item"
 				}
 				{
@@ -244,7 +259,6 @@
 			subtitle: "Endless Charcoal"
 			tasks: [
 				{
-					count: 27L
 					id: "5542F176D47F2C41"
 					item: "immersiveengineering:cokebrick"
 					type: "item"
@@ -275,29 +289,34 @@
 			]
 			icon: "thermal:charcoal_block"
 			id: "2301997FBD95F04C"
-			tasks: [
-				{
-					id: "64078733AF88BB17"
-					item: "refurbished_furniture:oak_chair"
-					type: "item"
-				}
-				{
-					id: "72317B15FCD063EC"
-					item: "thermal:charcoal_block"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "72317B15FCD063EC"
+				item: "thermal:charcoal_block"
+				type: "item"
+			}]
 			title: "Making Better Fuel"
 			x: 0.0d
 			y: 3.0d
 		}
 		{
+			description: [
+				"You can cast a portal with ten buckets of lava and one bucket of water."
+				""
+				"The nether can be used as a shortcut to diffrent places in the backrooms. Do note that a portal must always be constructed from the Backrooms to the Nether."
+			]
 			id: "021C50BEE88E0B07"
-			rewards: [{
-				id: "36AFB541A92C8E45"
-				item: "minecraft:music_disc_pigstep"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "36AFB541A92C8E45"
+					item: "minecraft:music_disc_pigstep"
+					type: "item"
+				}
+				{
+					id: "375270AFB42E4609"
+					item: "plushie_buddies:plushie_ghast"
+					type: "item"
+				}
+			]
 			shape: "square"
 			subtitle: "Expected Something Else?"
 			tasks: [{
@@ -306,13 +325,60 @@
 				title: "Visit the Nether"
 				type: "dimension"
 			}]
-			x: 9.0d
-			y: 5.0d
+			x: 10.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["021C50BEE88E0B07"]
 			icon: "supplementaries:checker_block"
 			id: "780450B76916CDB7"
+			rewards: [{
+				id: "4A625113C256BB24"
+				item: {
+					Count: 1
+					id: "table_top_craft:oak_chess"
+					tag: {
+						BlockEntityTag: {
+							ChessValues: {
+								AttackMoveColor: "255/1/1/100"
+								BlackCheckMate: 0b
+								BlackPiecesColor: "51/51/51/255"
+								BlackTilesColor: "139/86/57/255"
+								BoardFEN: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 0"
+								CastleMoveColor: "125/1/255/100"
+								DisplayParticles: 1
+								FirstMoves: "0/1/2/3/4/5/6/7/8/9/10/11/12/13/14/15/48/49/50/51/52/53/54/55/56/57/58/59/60/61/62/63"
+								HumanMovedPiece: -1
+								InvalidMoveColor: "255/255/1/100"
+								IsBlackCastled: 0b
+								IsWhiteCastled: 0b
+								LegalMoveColor: "1/255/1/100"
+								MoveLog: [ ]
+								PieceSet: 1
+								PlayPieceAnimations: 1
+								PreviousMoveColor: "1/150/125/100"
+								PromotionCoordinate: -1b
+								ShowAvailableMoves: 0
+								ShowPreviousMove: 0
+								ShowTileInfo: 0
+								SourceTile: -1
+								TileInfoColor: "255/255/255/255"
+								UseCustomPlate: 0
+								WaitingForPromotion: 0
+								WhiteCheckMate: 0b
+								WhitePiecesColor: "210/188/161/255"
+								WhiteTilesColor: "208/177/141/255"
+							}
+							ForgeCaps: { }
+							id: "table_top_craft:chess"
+						}
+						display: {
+							Lore: ["\"(+NBT)\""]
+						}
+					}
+				}
+				type: "item"
+			}]
 			shape: "square"
 			subtitle: "Time for Chess"
 			tasks: [
@@ -332,7 +398,7 @@
 					type: "item"
 				}
 			]
-			x: 9.0d
+			x: 10.0d
 			y: 7.5d
 		}
 		{
@@ -347,38 +413,15 @@
 				type: "item"
 			}]
 			x: 5.0d
-			y: 11.0d
+			y: 13.0d
 		}
 		{
 			dependencies: ["203FC15B09EAA27F"]
 			id: "541234B688B98E86"
-			rewards: [
-				{
-					id: "74A7696D12C549D3"
-					item: "supplementaries:confetti_popper"
-					type: "item"
-				}
-				{
-					id: "1973D6AD587BBEAD"
-					item: "kubejs:party_popper"
-					type: "item"
-				}
-				{
-					id: "6B1A7EB040282B4B"
-					item: "minecraft:jukebox"
-					type: "item"
-				}
-				{
-					id: "490E316D0D102225"
-					item: "minecraft:music_disc_relic"
-					type: "item"
-				}
-			]
-			size: 2.0d
+			size: 3.0d
 			tasks: [{
-				count: 5L
 				id: "55DF6C1569B150BA"
-				item: { Count: 5, id: "minecraft:cobblestone" }
+				item: "minecraft:cobblestone"
 				type: "item"
 			}]
 			title: "Cobblestone Generator"
@@ -410,25 +453,8 @@
 					type: "item"
 				}
 				{
-					id: "1FBD035CF15ABAF1"
-					item: {
-						Count: 1
-						id: "fairylights:pennant_bunting"
-						tag: {
-							color: 1481884
-							pattern: [{
-								Count: 1b
-								id: "fairylights:triangle_pennant"
-								tag: {
-									color: 1481884
-								}
-							}]
-							text: {
-								styling: [I; ]
-								value: ""
-							}
-						}
-					}
+					id: "236EAA963388D69D"
+					item: "plushie_buddies:plushie_iron_golem"
 					type: "item"
 				}
 			]
@@ -464,7 +490,7 @@
 			]
 			title: "Building a Smeltery"
 			x: 0.0d
-			y: 15.0d
+			y: 18.0d
 		}
 		{
 			dependencies: ["541234B688B98E86"]
@@ -502,6 +528,7 @@
 				"5782203B2280911B"
 				"2B462CBD198F53F7"
 			]
+			description: ["You can turn Treated wood into Livingwood using the pure daisy."]
 			icon: "botania:livingwood"
 			id: "4EFCB9F8F9EDC5EB"
 			tasks: [{
@@ -542,7 +569,7 @@
 					type: "item"
 				}
 			]
-			x: 7.0d
+			x: 7.5d
 			y: 1.0d
 		}
 		{
@@ -550,7 +577,11 @@
 				"1773F3D3ECBC4923"
 				"22FF287969C58B70"
 			]
-			description: ["Soggy carpet can be used in combination with Floral Fertiliser to bring some colour to this monochrome place."]
+			description: [
+				"Soggy carpet can be used in combination with Floral Fertiliser to bring some colour to this monochrome place."
+				""
+				"Any dye can be used to make it in the Petal Apothecary. Yellow dye is the easiest to obtain since it can be extracted from wallpaper by washing it with an Encased Fan."
+			]
 			icon: "botania:fertilizer"
 			id: "495E194ACEFD9CD7"
 			rewards: [
@@ -595,11 +626,13 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["1773F3D3ECBC4923"]
+			dependencies: ["1A5679134A610FF2"]
 			description: [
 				"Sugarcane grows ways faster on snad. "
 				""
 				"Can this be exploited?, you be the judge."
+				""
+				"Snad not only allows for faster growth. If a block of Snad is updated by redstone it will force the plant on top of it to grow."
 			]
 			icon: "minecraft:sugar_cane"
 			id: "2A93ADA6EAA0C7EB"
@@ -616,13 +649,18 @@
 					type: "item"
 				}
 			]
-			x: 9.0d
-			y: 1.0d
+			x: -2.5d
+			y: 10.0d
 		}
 		{
 			dependencies: [
 				"1BFE1926B47FD92D"
-				"1A5679134A610FF2"
+				"2A93ADA6EAA0C7EB"
+			]
+			description: [
+				"You can turn sweet berries into Liminal Jam."
+				""
+				"Before you can do this you need to obtain Sugar Cane from the Petal Apothecary"
 			]
 			icon: "brewinandchewin:sweet_berry_jam"
 			id: "347FB9BA17B5C66C"
@@ -677,7 +715,7 @@
 			]
 			title: "Liminal Jam"
 			x: -5.0d
-			y: 11.0d
+			y: 12.5d
 		}
 		{
 			dependencies: ["021C50BEE88E0B07"]
@@ -704,7 +742,7 @@
 				}
 				type: "item"
 			}]
-			x: 7.0d
+			x: 7.5d
 			y: 7.5d
 		}
 		{
@@ -725,6 +763,88 @@
 			title: "Renewable Coal Coke"
 			x: 2.5d
 			y: 7.5d
+		}
+		{
+			dependencies: ["495E194ACEFD9CD7"]
+			description: [
+				"With Mystical Flowers you can make all the dyes. "
+				""
+				"This will allow you to start painting with other colours than just yellow."
+				""
+				"You can add dyes to your palette by crafting the palette and dyes together on a crafting table."
+				""
+				"It is now also possible to develop colour film in the Lightroom."
+			]
+			icon: "xercapaint:item_easel"
+			id: "63B870600FBEBB1D"
+			rewards: [
+				{
+					count: 3
+					id: "5789C0B118C49A62"
+					item: "exposure:color_film"
+					type: "item"
+				}
+				{
+					id: "2B756AE011DB6C24"
+					item: "xercapaint:item_palette"
+					type: "item"
+				}
+			]
+			subtitle: "Taste the Rainbow!"
+			tasks: [
+				{
+					id: "4C1121ADF7D94181"
+					item: "xercapaint:item_easel"
+					type: "item"
+				}
+				{
+					id: "180A2276E1F5CB5C"
+					item: "xercapaint:item_canvas"
+					type: "item"
+				}
+			]
+			title: "Time to Paint"
+			x: 7.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["021C50BEE88E0B07"]
+			description: ["Backpacks can be made using leather crafted from scrapping books."]
+			icon: "sophisticatedbackpacks:backpack"
+			id: "20CA5E31A6BC6960"
+			rewards: [
+				{
+					id: "469EB7AEC1EE8012"
+					item: "sophisticatedbackpacks:advanced_jukebox_upgrade"
+					type: "item"
+				}
+				{
+					id: "448C208C5E454147"
+					item: "sophisticatedbackpacks:pickup_upgrade"
+					type: "item"
+				}
+				{
+					id: "355706B93C7F1166"
+					item: "sophisticatedbackpacks:deposit_upgrade"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 3L
+					id: "4EF694C2C87272F0"
+					item: { Count: 3, id: "minecraft:leather" }
+					type: "item"
+				}
+				{
+					id: "01DCD5B62C93BBD5"
+					item: "sophisticatedbackpacks:backpack"
+					type: "item"
+				}
+			]
+			title: "Leather for Backpacks"
+			x: 7.5d
+			y: 5.0d
 		}
 	]
 	title: "Chapter 2"

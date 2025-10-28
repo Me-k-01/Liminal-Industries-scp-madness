@@ -1,8 +1,4 @@
 BlockEvents.modification(event => {
-	event.modify('minecraft:sculk', block => {
-		block.explosionResistance = 10000.0
-		block.destroySpeed = -1.0
-	})
 
 	event.modify('supplementaries:book_pile', block => {
 		block.destroySpeed = 0.0
@@ -17,17 +13,25 @@ BlockEvents.modification(event => {
 		block.destroySpeed = -1.0
 	})
 
-	event.modify('minecraft:wet_sponge', block => {
+	event.modify('antiblocksrechiseled:bright_cyan', block => {
 		block.hasCollision = false
 	})
 
-	event.modify(Ingredient.of(/\bantiblock\b/).itemIds, block => {
-		block.destroySpeed = -1.0
-		block.explosionResistance = 10000.0
-		block.destroySpeed = -1.0
-	})
+})
 
-  })
+ItemEvents.modification(event => {
+ 	event.modify('dustrial_decor:cardboard_box', item => {
+   		item.setBurnTime(2000)
+  	})
+
+	event.modify('dustrial_decor:folded_cardboard', item => {
+   		item.setBurnTime(2000)
+  	})
+
+	event.modify('dustrial_decor:smooth_cardboard', item => {
+   		item.setBurnTime(2000)
+  	})
+})
 
 ForgeEvents.onEvent("net.minecraftforge.event.entity.player.PlayerEvent$BreakSpeed", event => global.breakSpeed(event))
 /**

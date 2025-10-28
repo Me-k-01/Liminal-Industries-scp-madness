@@ -102,6 +102,14 @@ ServerEvents.recipes(event => {
         'kubejs:carpet_dust'
     ])
 
+    event.remove({type: 'minecraft:crafting_shapeless', output: 'thermal:gunpowder_mushroom_spores'})
+    event.remove({type: 'minecraft:crafting_shapeless', output: 'thermal:gunpowder_mushroom_spores'})
+    event.recipes.botania.petal_apothecary('thermal:gunpowder_mushroom_spores', [
+        '#botania:petals/gray',
+        'minecraft:gunpowder',
+        'supplementaries:ash'
+    ])
+
     event.recipes.botania.petal_apothecary('minecraft:red_mushroom', [
         '#botania:petals/red',
         'minecraft:bone_meal',

@@ -34,7 +34,6 @@ ServerEvents.recipes(event => {
         C: 'minecraft:ice'
 	})
 
-        
     event.custom({
         "type": "brewinandchewin:fermenting",
         "basefluid": {
@@ -42,7 +41,7 @@ ServerEvents.recipes(event => {
             "fluid": "minecraft:water"
         },
         "experience": 1.0,
-        "fermentingtime": 6000,
+        "fermentingtime": 9600,
         "ingredients": [
                 {
                     "item": "kubejs:cut_carpet"
@@ -56,56 +55,8 @@ ServerEvents.recipes(event => {
         ],
         "recipe_book_tab": "meals",
         "result": {
-        "count": 1,
+        "count": 8,
         "item": "minecraft:dirt"
-        },
-        "temperature": 3
-    })
-
-    event.custom({
-        "type": "brewinandchewin:fermenting",
-        "basefluid": {
-            "count": 1000,
-            "fluid": "minecraft:water"
-        },
-        "experience": 0.0,
-        "fermentingtime": 2400,
-        "ingredients": [
-                {
-                    "item": "thermal:redstone_mushroom_spores"
-                },
-                {
-                    "item": "minecraft:sugar"
-                }
-        ],
-        "recipe_book_tab": "meals",
-        "result": {
-        "count": 2,
-        "item": "thermal:redstone_mushroom_spores"
-        },
-        "temperature": 4
-    })
-
-    event.custom({
-        "type": "brewinandchewin:fermenting",
-        "basefluid": {
-            "count": 1000,
-            "fluid": "minecraft:water"
-        },
-        "experience": 0.0,
-        "fermentingtime": 2400,
-        "ingredients": [
-                {
-                    "item": "thermal:glowstone_mushroom_spores"
-                },
-                {
-                    "item": "minecraft:sugar"
-                }
-        ],
-        "recipe_book_tab": "meals",
-        "result": {
-        "count": 2,
-        "item": "thermal:glowstone_mushroom_spores"
         },
         "temperature": 4
     })
@@ -183,5 +134,60 @@ ServerEvents.recipes(event => {
           "fluid": "brewinandchewin:steel_toe_stout"
         },
         "temperature": 1
+    })
+
+    event.custom({
+      "type": "brewinandchewin:fermenting",
+      "basefluid": {
+        "count": 1000,
+        "fluid": "minecraft:water"
+      },
+      "experience": 1.0,
+      "fermentingtime": 9600,
+      "ingredients": [
+        {
+          "item": "minecraft:redstone"
+        },
+        {
+          "item": "minecraft:blaze_powder"
+        },
+        {
+          "item": "minecraft:bucket"
+        }
+      ],
+      "recipe_book_tab": "meals",
+      "result": {
+        "count": 1,
+        "item": "enderio:fire_water_bucket"
+      },
+      "temperature": 4
+    })
+
+    event.remove({output: 'farmersdelight:organic_compost'})
+    event.custom({
+      "type": "brewinandchewin:fermenting",
+      "basefluid": {
+        "count": 1000,
+        "fluid": "minecraft:water"
+      },
+      "experience": 1.0,
+      "fermentingtime": 9600,
+      "ingredients": [
+        {
+          "item": "minecraft:dirt"
+        },
+        {
+          "item": "kubejs:cut_carpet"
+        },
+        {
+          "item": "kubejs:cut_carpet"
+        }
+      ],
+      "recipe_book_tab": "meals",
+      "result": {
+        "count": 2,
+        "item": "farmersdelight:organic_compost"
+      },
+      "temperature": 4
     })
 })

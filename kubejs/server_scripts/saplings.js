@@ -52,15 +52,25 @@ ServerEvents.recipes(event => {
         "experience": 0.15
         })
 
-    event.recipes.create.splashing([
-        Item.of('minecraft:beetroot_seeds').withChance(0.01),
-        Item.of('farmersdelight:cabbage_seeds').withChance(0.01),
-        Item.of('minecraft:wheat_seeds').withChance(0.01),
-        Item.of('minecraft:pumpkin_seeds').withChance(0.01),
-        Item.of('minecraft:melon_seeds').withChance(0.01)
-    ],
-        'minecraft:dirt')
-
+    event.custom({
+        "type": "thermal:insolator",
+        "ingredient": {
+            "item": "neapolitan:banana_frond"
+        },
+        "result": [
+            {
+                "item": "neapolitan:banana_stalk",
+                "count": 5
+            },
+            {
+                "item": "neapolitan:banana_frond"
+            },
+            {
+                "item": "neapolitan:banana_bundle"
+            }
+        ],
+        "experience": 0.15
+        })
 
 })
 

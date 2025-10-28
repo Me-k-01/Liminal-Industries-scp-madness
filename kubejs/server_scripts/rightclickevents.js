@@ -1,7 +1,33 @@
 BlockEvents.rightClicked('kubejs:oil_carpet', event => {
 
-	if (event.item.id == 'thermal:drill_head') {
+	if (event.item.id == 'minecraft:sponge') {
 		event.server.runCommandSilent(`execute in ${event.entity.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run function backrooms:oil_bubble`)
+		event.cancel()
+		}
+	})
+
+BlockEvents.rightClicked('kubejs:wallpaper1', event => {
+  		const heldItem = event.item
+
+  	if (heldItem && heldItem.hasTag('minecraft:axes')) {
+		
+    	const {hand, player} = event
+    	player.damageHeldItem(hand, 1)
+		event.server.runCommandSilent(`execute in ${event.entity.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run playsound minecraft:item.axe.strip master @a ~ ~ ~ 1 1`)
+		event.server.runCommandSilent(`execute in ${event.entity.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run setblock ~ ~ ~ kubejs:stripped_wallpaper`)
+		event.player.giveInHand('kubejs:wallpaper')
+
+		}
+	})
+
+BlockEvents.rightClicked('kubejs:wallpaper1', event => {
+
+	if (event.item.id == 'kubejs:putty_knife') {
+		
+		event.server.runCommandSilent(`execute in ${event.entity.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run playsound minecraft:item.axe.strip master @a ~ ~ ~ 1 1`)
+		event.server.runCommandSilent(`execute in ${event.entity.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run setblock ~ ~ ~ kubejs:stripped_wallpaper`)
+		event.player.giveInHand('kubejs:wallpaper')
+
 		}
 	})
 
@@ -55,6 +81,14 @@ BlockEvents.rightClicked('kubejs:reality_controller', event => {
 		event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} if block ~ ~1 ~ kubejs:reality_charge run function backrooms:reality_end`)
 	}
 
+	if (event.item.id == 'kubejs:data_chip9') {
+		event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} if block ~ ~1 ~ kubejs:reality_charge run function backrooms:reality_room`)
+	}
+
+	if (event.item.id == 'kubejs:data_chip10') {
+		event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} if block ~ ~1 ~ kubejs:reality_charge run function backrooms:reality_portal`)
+	}
+
 	if (event.item.id == 'kubejs:data_chip_error') {
 		event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} if block ~ ~1 ~ kubejs:reality_charge run function backrooms:reality_error`)
 	}
@@ -65,8 +99,17 @@ BlockEvents.rightClicked('kubejs:reality_controller', event => {
 })
 
 BlockEvents.rightClicked('minecraft:sculk', event => {
-	event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run title @a[distance=..7] actionbar {"text":"You can't place blocks on sculk!","color":"white"}`)
-	event.cancel()
+	if (event.item.id == 'kubejs:sculk_scrubber') {
+		event.server.runCommandSilent(`execute in ${event.entity.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run title @a[distance=..7] actionbar {"text":"Try to place the Sculk Scrubber on the side of a non-sculk block to get it in the right position.","color":"white"}`)
+		event.cancel()
+	}
+})
+
+BlockEvents.rightClicked('minecraft:sculk', event => {
+	if (event.item.id != 'kubejs:sculk_scrubber') {
+		event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run title @a[distance=..7] actionbar {"text":"You can't place blocks on sculk!","color":"white"}`)
+		event.cancel()
+	}
 })
 BlockEvents.rightClicked('kubejs:sculk_tendrils', event => {
 	event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run title @a[distance=..7] actionbar {"text":"You can't place blocks on sculk!","color":"white"}`)
@@ -132,4 +175,33 @@ BlockEvents.rightClicked(/.*/, event => {
 		event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run playsound minecraft:item.bucket.empty_lava master @a ~ ~ ~ 1 0`)
 		event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run particle lava ~ ~ ~ 0 0 0 0.5 10 force`)
 	}
+
+	if (event.item.id == 'miners_delight:copper_cup') {
+		event.cancel()
+	}
+})
+
+BlockEvents.broken('cfm_circuit_breaker:circuit_breaker', event => {
+	event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} run function backrooms:powerhouse_depower`)
+})
+
+BlockEvents.broken('mekanism:radioactive_waste_barrel', event => {
+	event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} if entity @e[tag=radioactive_waste_barrel,distance=..1] run function backrooms:radiation_barrel`)
+})
+
+ItemEvents.rightClicked('minecraft:lava_bucket', event => {
+    if( event.item.count > 1){
+		event.cancel()
+	}
+})
+
+BlockEvents.rightClicked('kubejs:wall_destroyer', event => {
+	event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} if block ~ ~ ~ kubejs:wall_destroyer[facing=north] unless block ~ ~ ~1 minecraft:air if block ~ ~ ~2 kubejs:wall_destroyer[facing=south] positioned ~ ~ ~1 run function backrooms:wall_break`)
+	event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} if block ~ ~ ~ kubejs:wall_destroyer[facing=south] unless block ~ ~ ~-1 minecraft:air if block ~ ~ ~-2 kubejs:wall_destroyer[facing=north] positioned ~ ~ ~-1 run function backrooms:wall_break`)
+
+	event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} if block ~ ~ ~ kubejs:wall_destroyer[facing=west] unless block ~1 ~ ~ minecraft:air if block ~2 ~ ~ kubejs:wall_destroyer[facing=east] positioned ~1 ~ ~ run function backrooms:wall_break`)
+	event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} if block ~ ~ ~ kubejs:wall_destroyer[facing=east] unless block ~-1 ~ ~ minecraft:air if block ~-2 ~ ~ kubejs:wall_destroyer[facing=west] positioned ~-1 ~ ~ run function backrooms:wall_break`)
+
+	event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} if block ~ ~ ~ kubejs:wall_destroyer[facing=down] unless block ~ ~1 ~ minecraft:air if block ~ ~2 ~ kubejs:wall_destroyer[facing=up] positioned ~ ~1 ~ run function backrooms:wall_break`)
+	event.server.runCommandSilent(`execute in ${event.block.level.dimension} positioned ${event.block.x} ${event.block.y} ${event.block.z} if block ~ ~ ~ kubejs:wall_destroyer[facing=up] unless block ~ ~-1 ~ minecraft:air if block ~ ~-2 ~ kubejs:wall_destroyer[facing=down] positioned ~ ~-1 ~ run function backrooms:wall_break`)
 })

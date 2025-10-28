@@ -36,12 +36,6 @@ ServerEvents.recipes(event => {
 			{"item": "create:encased_fan"}]
 		})
 
-	event.remove({output: 'miners_delight:weird_caviar'})
-	event.shapeless('miners_delight:weird_caviar', [
-		'minecraft:bowl',
-		'miners_delight:silverfish_eggs'
-	])
-
 	event.remove({id: 'create:splashing/sand'})
 	event.recipes.create.splashing([
         Item.of('minecraft:clay_ball').withChance(0.5)
@@ -78,7 +72,9 @@ ServerEvents.recipes(event => {
 		],{
 		  A: 'minecraft:wet_sponge', 
 		  B: 'ceramicbucket:ceramic_bucket'
-	}).replaceIngredient({item: 'minecraft:wet_sponge'}, 'minecraft:sponge')
+	})
+	.replaceIngredient({item: 'minecraft:wet_sponge'}, 'minecraft:sponge')
+	.replaceIngredient({item: 'ceramicbucket:ceramic_bucket'}, 'minecraft:air')
 
 	event.shaped(
 		'minecraft:wet_sponge',
@@ -210,7 +206,6 @@ event.shaped('create:hand_crank', [
 
 	event.replaceInput({id: 'create:crafting/kinetics/steam_engine'}, 'create:golden_sheet', 'create:shaft')
 	event.replaceInput({id: 'create:crafting/kinetics/brass_hand'}, 'create:golden_sheet', '#minecraft:planks')
-	event.remove({output: 'immersiveengineering:light_bulb'})
 	event.remove({output: 'immersiveengineering:electron_tube'})
 	event.remove({output: 'minecraft:coal_block'})
 

@@ -11,7 +11,6 @@ ServerEvents.recipes(event => {
 	breaking('2x minecraft:dark_oak_planks', '#backrooms:dark_oak_furniture')
 	breaking('2x minecraft:mangrove_planks', '#backrooms:mangrove_furniture')
 	breaking('2x minecraft:cherry_planks', '#backrooms:cherry_furniture')
-	breaking('2x minecraft:bamboo_planks', '#backrooms:bamboo_furniture')
 	breaking('2x minecraft:warped_planks', '#backrooms:warped_furniture')
 	breaking('2x minecraft:crimson_planks', '#backrooms:crimson_furniture')
 
@@ -28,17 +27,16 @@ ServerEvents.recipes(event => {
 			],
 			"minecraft:block.wood.break");
 	}
-	chopping('4x minecraft:oak_planks', '#backrooms:oak_furniture')
-	chopping('4x minecraft:spruce_planks', '#backrooms:spruce_furniture')
-	chopping('4x minecraft:birch_planks', '#backrooms:birch_furniture')
-	chopping('4x minecraft:jungle_planks', '#backrooms:jungle_furniture')
-	chopping('4x minecraft:acacia_planks', '#backrooms:acacia_furniture')
-	chopping('4x minecraft:dark_oak_planks', '#backrooms:dark_oak_furniture')
-	chopping('4x minecraft:mangrove_planks', '#backrooms:mangrove_furniture')
-	chopping('4x minecraft:cherry_planks', '#backrooms:cherry_furniture')
-	chopping('4x minecraft:bamboo_planks', '#backrooms:bamboo_furniture')
-	chopping('4x minecraft:warped_planks', '#backrooms:warped_furniture')
-	chopping('4x minecraft:crimson_planks', '#backrooms:crimson_furniture')
+	chopping('6x minecraft:oak_planks', '#backrooms:oak_furniture')
+	chopping('6x minecraft:spruce_planks', '#backrooms:spruce_furniture')
+	chopping('6x minecraft:birch_planks', '#backrooms:birch_furniture')
+	chopping('6x minecraft:jungle_planks', '#backrooms:jungle_furniture')
+	chopping('6x minecraft:acacia_planks', '#backrooms:acacia_furniture')
+	chopping('6x minecraft:dark_oak_planks', '#backrooms:dark_oak_furniture')
+	chopping('6x minecraft:mangrove_planks', '#backrooms:mangrove_furniture')
+	chopping('6x minecraft:cherry_planks', '#backrooms:cherry_furniture')
+	chopping('6x minecraft:warped_planks', '#backrooms:warped_furniture')
+	chopping('6x minecraft:crimson_planks', '#backrooms:crimson_furniture')
 
 	let cutting = (output, input) => {
 		event.recipes.create.cutting(
@@ -49,16 +47,52 @@ ServerEvents.recipes(event => {
 			],
 		input
 	)}
-	cutting('8x minecraft:oak_planks', '#backrooms:oak_furniture')
-	cutting('8x minecraft:spruce_planks', '#backrooms:spruce_furniture')
-	cutting('8x minecraft:birch_planks', '#backrooms:birch_furniture')
-	cutting('8x minecraft:jungle_planks', '#backrooms:jungle_furniture')
-	cutting('8x minecraft:acacia_planks', '#backrooms:acacia_furniture')
-	cutting('8x minecraft:dark_oak_planks', '#backrooms:dark_oak_furniture')
-	cutting('8x minecraft:mangrove_planks', '#backrooms:mangrove_furniture')
-	cutting('8x minecraft:cherry_planks', '#backrooms:cherry_furniture')
-	cutting('8x minecraft:bamboo_planks', '#backrooms:bamboo_furniture')
-	cutting('8x minecraft:warped_planks', '#backrooms:warped_furniture')
-	cutting('8x minecraft:crimson_planks', '#backrooms:crimson_furniture')
+	cutting('10x minecraft:oak_planks', '#backrooms:oak_furniture')
+	cutting('10x minecraft:spruce_planks', '#backrooms:spruce_furniture')
+	cutting('10x minecraft:birch_planks', '#backrooms:birch_furniture')
+	cutting('10x minecraft:jungle_planks', '#backrooms:jungle_furniture')
+	cutting('10x minecraft:acacia_planks', '#backrooms:acacia_furniture')
+	cutting('10x minecraft:dark_oak_planks', '#backrooms:dark_oak_furniture')
+	cutting('10x minecraft:mangrove_planks', '#backrooms:mangrove_furniture')
+	cutting('10x minecraft:cherry_planks', '#backrooms:cherry_furniture')
+	cutting('10x minecraft:warped_planks', '#backrooms:warped_furniture')
+	cutting('10x minecraft:crimson_planks', '#backrooms:crimson_furniture')
 
+	event.shapeless("minecraft:brown_wool", ["refurbished_furniture:brown_sofa"])
+	event.shapeless("minecraft:brown_wool", ["refurbished_furniture:brown_stool"])
+
+	event.recipes.farmersdelight.cutting(
+		"refurbished_furniture:brown_sofa",
+		"#forge:tools/axes",
+		[
+			"minecraft:oak_planks",
+			"minecraft:brown_wool"
+		],
+		"minecraft:block.wood.break");
+
+	event.recipes.create.cutting(
+		[
+			"2x minecraft:oak_planks",
+			"minecraft:brown_wool"
+		],
+		"refurbished_furniture:brown_sofa")
+
+	event.recipes.farmersdelight.cutting(
+		"refurbished_furniture:brown_stool",
+		"#forge:tools/axes",
+		[
+			"minecraft:oak_planks",
+			"minecraft:brown_wool"
+		],
+		"minecraft:block.wood.break");
+
+	event.recipes.create.cutting(
+		[
+			"2x minecraft:oak_planks",
+			"minecraft:brown_wool"
+		],
+		"refurbished_furniture:brown_stool")
+
+	chopping('4x minecraft:bamboo_planks', 'chimes:carved_bamboo_chimes')
+	
 })

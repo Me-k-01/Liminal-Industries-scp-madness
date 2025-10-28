@@ -16,7 +16,8 @@ execute if score RNG RNG_Variable matches 11 run setblock ~ ~ ~ refurbished_furn
 execute if score RNG RNG_Variable matches 12 run setblock ~ ~ ~ refurbished_furniture:jungle_chair[facing=south]
 execute if score RNG RNG_Variable matches 13 run setblock ~ ~ ~ refurbished_furniture:spruce_chair[facing=south]
 execute if score RNG RNG_Variable matches 14 run setblock ~ ~ ~ refurbished_furniture:oak_chair[facing=south]
-execute if score RNG RNG_Variable matches 15 run setblock ~ ~ ~ supplementaries:cannonball[balls=2]
+execute if score RNG RNG_Variable matches 15 run setblock ~ ~ ~ mekanism:radioactive_waste_barrel[facing=north]
+execute if score RNG RNG_Variable matches 15 run summon marker ~ ~0.5 ~ {Tags:["radioactive_waste_barrel"]}
 execute if score RNG RNG_Variable matches 16 run setblock ~ ~ ~ refurbished_furniture:jungle_chair[facing=south]
 execute if score RNG RNG_Variable matches 17 run setblock ~ ~ ~ refurbished_furniture:spruce_chair[facing=south]
 execute if score RNG RNG_Variable matches 18 unless block ~ ~1 ~1 minecraft:air run setblock ~ ~1 ~ cfm_circuit_breaker:circuit_breaker[facing=south]
